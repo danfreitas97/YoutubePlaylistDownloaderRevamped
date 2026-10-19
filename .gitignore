@@ -301,3 +301,6 @@ __pycache__/
 YoutubePlaylistDownloader/ffmpeg.exe
 /Installer Output/
 /FFmpeg/
+
+# Installer build output
+YPDSetup/output/

@@ -24,10 +24,12 @@ Este projeto é um fork com interface e fluxo de uso totalmente refeitos do [You
 
 ## Instalação
 
-1. Baixe o instalador mais recente na página de [Releases](https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped/releases).
-2. Execute o `YoutubePlaylistDownloaderRevamped-Setup.exe`.
+1. Baixe o **[instalador mais recente](https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped/releases/latest/download/YoutubePlaylistDownloaderRevamped-Setup.exe)** (ou veja todas as versões em [Releases](https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped/releases)).
+2. Abra o `YoutubePlaylistDownloaderRevamped-Setup.exe` e siga as telas.
 
-O app precisa do Windows 10 ou 11 e do [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). Ele pode ser instalado ao lado do app original, sem conflito.
+Se aparecer a tela azul **"O Windows protegeu o computador"**, clique em **Mais informações** e depois em **Executar assim mesmo**. Esse aviso aparece em apps novos que ainda não têm uma assinatura digital paga. Não quer dizer que haja algo errado com o instalador.
+
+O app funciona no Windows 10 e 11 (64 bits) e não precisa de nada instalado antes. Ele pode ficar instalado ao lado do app original, sem conflito.
 
 ## Como usar
 
@@ -59,6 +61,8 @@ git clone https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped.git
 cd YoutubePlaylistDownloaderRevamped
 dotnet build YoutubePlaylistDownloader/YoutubePlaylistDownloader.csproj -c Release
 ```
+
+Para gerar o instalador, instale o [Inno Setup 6](https://jrsoftware.org/isinfo.php) (`winget install JRSoftware.InnoSetup`) e rode `YPDSetup/build.ps1`. O instalador sai em `YPDSetup/output`.
 
 Para baixar vídeo e converter áudio, o app usa o [FFmpeg](https://ffmpeg.org/). Ele procura o `ffmpeg.exe` ao lado do executável, depois em `%AppData%\YouTube Playlist Downloader Revamped` e por fim no `PATH`. Se não achar, oferece baixar uma versão pronta do [FFmpegBin](https://github.com/Tyrrrz/FFmpegBin) para a pasta do app.
 

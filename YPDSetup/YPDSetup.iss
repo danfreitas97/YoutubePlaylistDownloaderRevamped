@@ -21,18 +21,35 @@ OutputBaseFilename=YoutubePlaylistDownloaderRevamped-Setup
 SetupIconFile=..\YoutubePlaylistDownloader\finalIcon.ico
 Compression=lzma
 SolidCompression=yes
-UninstallDisplayIcon=..\YoutubePlaylistDownloader\finalIcon.ico
+UninstallDisplayIcon={app}\YoutubePlaylistDownloader.exe
+; The app is published self-contained for 64-bit Windows: no separate .NET install needed.
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
+MinVersion=10.0
+WizardStyle=modern
+; Close a running copy before replacing its files.
+CloseApplications=yes
 
 [Languages]
+Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "german"; MessagesFile: "compiler:Languages\German.isl"
+Name: "french"; MessagesFile: "compiler:Languages\French.isl"
+Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "dutch"; MessagesFile: "compiler:Languages\Dutch.isl"
+Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl"
+Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
+Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
+Name: "arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
 Name: "chinese"; MessagesFile: "ChineseSimplified.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
 
 [Files]
-Source: "..\YoutubePlaylistDownloader\bin\Release\net8.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files        
 
