@@ -1,0 +1,10 @@
+2.0.0:
+- Interface totalmente nova, com tema claro e escuro
+- Fila de downloads com pausar, retomar, cancelar e tentar de novo
+- Escolha dos vídeos da playlist antes de baixar
+- Detecção de links copiados e arrastar e soltar
+- Login com a conta do YouTube direto no app para evitar bloqueios
+- O FFmpeg é baixado automaticamente na primeira vez que for necessário
+
+1.9.34:
+- Fixed "Video not available" issues

@@ -1,0 +1,311 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+                    xml:space="preserve">
+    
+    <s:String x:Key="Title">YouTube Playlist Downloader</s:String>
+    <FlowDirection x:Key="FlowDirection">LeftToRight</FlowDirection>
+    <s:String x:Key="InsertYoutubePlaylistLinkHere">Introduceți un link de YouTube aici</s:String>
+    <s:String x:Key="Exit">Ieșire</s:String>
+    <s:String x:Key="ExitMessage">Sunteți sigur că doriți să ieșiți?</s:String>
+    <s:String x:Key="Yes">Da</s:String>
+    <s:String x:Key="No">Nu</s:String>
+    <s:String x:Key="Error">Eroare</s:String>
+    <s:String x:Key="ErrorMessage">A avut loc o eroare neașteptată. Vă rugăm să contactați administratorul pentru a rezolva eroarea.</s:String>
+    <s:String x:Key="Settings">Setări</s:String>
+    <s:String x:Key="Preferences">Preferințe</s:String>
+    <s:String x:Key="Theme">Aspect</s:String>
+    <s:String x:Key="Language">Limbă</s:String>
+    <s:String x:Key="Back">Înapoi</s:String>
+    <s:String x:Key="SaveAndBackToDownload">Salvează și revino la meniul principal</s:String>
+    <s:String x:Key="DarkTheme">Temă întunecată</s:String>
+    <s:String x:Key="Name">Nume: </s:String>
+    <s:String x:Key="Description">Descriere: </s:String>
+    <s:String x:Key="Views">Vizualizări: </s:String>
+    <s:String x:Key="SaveDirectory">Salvează în: </s:String>
+    <s:String x:Key="CurrentlyDownloading">Descărcarea curentă: </s:String>
+    <s:String x:Key="TotalProgress">Progres curent: </s:String>
+    <s:String x:Key="AllDone">Finalizat.</s:String>
+    <s:String x:Key="Canceling">Se anulează descărcarea, vă rugăm așteptați...</s:String>
+    <s:String x:Key="Videos">Videoclipuri</s:String>
+    <s:String x:Key="Download">Descarcă</s:String>
+    <s:String x:Key="ConvertToMp3">Convertiți videoclipurile în</s:String>
+    <s:String x:Key="SaveVideoFormat">Salvați videoclipurile ca </s:String>
+    <s:String x:Key="StillConverting">Încă în proces de conversie</s:String>
+    <s:String x:Key="files">fișiere</s:String>
+    <s:String x:Key="Author">Autor: </s:String>
+    <s:String x:Key="PlaylistTitle">Titlu: </s:String>
+    <s:String x:Key="Loading">Se încarcă...</s:String>
+    <HorizontalAlignment x:Key="LeftAlignment">Left</HorizontalAlignment>
+    <s:String x:Key="About">Despre</s:String>
+    <s:String x:Key="Home">Acasă</s:String>
+    <s:String x:Key="Prefer">Preferă videoclipurile cu o rezoluție de</s:String>
+    <s:String x:Key="AreYouSureExit">Sunteți sigur că doriți să ieșiți?</s:String>
+    <s:String x:Key="TotalVideos">Videoclipuri în total: </s:String>
+    <s:String x:Key="BitRate">și setați bit rate-ul la</s:String>
+    <s:String x:Key="NewVersionAvailable">Versiune nouă disponibilă</s:String>
+    <s:String x:Key="DoYouWantToUpdate">Este disponibilă o versiune nouă, dorești să actualizezi?
+Acestea sunt noutățile: </s:String>
+    <s:String x:Key="DownloadingUpdateSetup">Se descarcă: Instalarea actualizării</s:String>
+    <s:String x:Key="UpdateCancelled">Actualizare anulată.</s:String>
+    <s:String x:Key="UpdateComplete">Descărcare completă.</s:String>
+    <s:String x:Key="UpdateWhenIExit">Actualizează la ieșire</s:String>
+    <s:String x:Key="UpdateAndExit">Închide și actualizează acum</s:String>
+    <s:String x:Key="UpdateFailed">Actualizare eșuată</s:String>
+    <s:String x:Key="CannotUpdate">Nu se poate actualiza în acest moment, încercați să reporniți aplicația și asigurați-vă că sunteți conectat la internet.
+Mesaj de eroare: </s:String>
+    <s:String x:Key="CouldntDownload">Anumite videoclipuri nu au putut fi descărcate.</s:String>
+    <s:String x:Key="ListOfNotDownloadedVideos">Lista de videoclipuri care nu au putut fi descărcate și motivul: </s:String>
+    <s:String x:Key="Options">Setări</s:String>
+    <s:String x:Key="CheckForUpdates">Verifică pentru actualizări</s:String>
+    <s:String x:Key="NoUpdates">Nu există actualizări</s:String>
+    <s:String x:Key="NoUpdatesAvailable">Nu există actualizări momentan, dispui de cea mai nouă versiune.</s:String>
+    <s:String x:Key="PlaylistIndex">Descarcă de la videoclipul cu numărul</s:String>
+    <s:String x:Key="UntilIndex">până la videoclipul cu numărul</s:String>
+    <s:String x:Key="LeaveEmptyOrZeroForUntilTheEnd">(lasă căsuța goală sau introdu 0 pentru a descărca toate videoclipurile din playlist)</s:String>
+    <s:String x:Key="NoVideosToDownload">Nu au putut fi găsite videoclipuri de descărcat</s:String>
+    <s:String x:Key="ThereAreNoVideosToDownload">Nu există videoclipuri de descărcat cu specificațiile alese</s:String>
+    <s:String x:Key="UpdateNow">Actualizează acum</s:String>
+    <s:String x:Key="Subscriptions">Abonamente</s:String>
+    <s:String x:Key="AutomaticllyDownloadSubscriptions">Descarcă automat videoclipuri noi de la aceste canale</s:String>
+    <s:String x:Key="InsertChannelLink">Introduceți link-ul canalului aici</s:String>
+    <s:String x:Key="Remove">Elimină</s:String>
+    <s:String x:Key="Id">ID: </s:String>
+    <s:String x:Key="Save">Salvează</s:String>
+    <s:String x:Key="PreferFPS">Preferă videoclipurile cu cele mai multe cadre pe secundă (FPS)</s:String>
+    <s:String x:Key="AudioOnly">Descarcă audio curat, fără a converti în niciun format</s:String>
+    <s:String x:Key="StillDownloadingSubscriptionsExit">Programul este în curs de descărcare a videoclipurilor din abonamente. Apăsând Da va închide programul, iar videoclipurile nu vor fi descărcate până la redeschiderea programului.
+Sunteți sigur că doriți să ieșiți?</s:String>
+    <s:String x:Key="LastVideoDownloadDate">Data ultimei actualizări: </s:String>
+    <s:String x:Key="Help">Ajutor</s:String>
+    <s:String x:Key="SubscriptionsHelp">Abonamentele sunt canale pe care programul le urmărește pentru a descărca videoclipuri care apar după adăugarea abonamentului
+        
+De exemplu, dacă ai adăugat un abonament la canalul "x" pe 1 septembrie, iar canalul "x" a adăugat un videoclip pe 2 septembrie, acesta va fi descărcat automat. 
+        
+Videoclipurile antecedente nu vor fi descărcate, iar videoclipurile nu vor fi descărcate din nou, chiar dacă ștergeți un videoclip anume. 
+        
+Toate abonamentele sunt configurabile și au propriile setări, pentru a accesa setările abonamentele faceți click pe "Abonamente" în meniul principal, apoi click pe "Setări" pentru canalul dorit.
+
+Vă rugăm țineți cont că dacă programul nu rulează, videoclipurile nu se vor descărca.
+    </s:String>
+    <s:String x:Key="ContactTheDeveloper">Contact</s:String>
+    <s:String x:Key="AutomaticallyCheckForUpdates">Verifică pentru actualizări la pornirea aplicației</s:String>
+    <s:String x:Key="WhatsNew">Ce e nou?</s:String>
+    <s:String x:Key="SubscriptionsUpdateDelay">Actualizează abonamentele la fiecare</s:String>
+    <s:String x:Key="Minutes">minute</s:String>
+    <s:String x:Key="SaveDownloadOptions">Salvează preferințele mele pentru descărcări</s:String>
+    <s:String x:Key="DownloadSpeed">Viteza descărcării: </s:String>
+    <s:String x:Key="Changelog">Jurnal modificări</s:String>
+    <s:String x:Key="Search">Caută</s:String>
+    <s:String x:Key="Queue">Coadă</s:String>
+    <s:String x:Key="Downloading">Se descarcă...</s:String>
+    <s:String x:Key="Skipping">Fișier existent, se sare peste...</s:String>
+    <s:String x:Key="Converting">Se convertește...</s:String>
+    <s:String x:Key="DownloadInBackground">Adaugă în coadă</s:String>
+    <s:String x:Key="Audio">Audio</s:String>
+    <s:String x:Key="Video">Video</s:String>
+    <s:String x:Key="DownloadCaptions">Descarcă subtitrări</s:String>
+    <s:String x:Key="CaptionsLanguage">Limbă subtitrări:</s:String>
+    <s:String x:Key="BulkDownload">Descarcă în bloc</s:String>
+    <s:String x:Key="LimitConverstions">Limitează numărul maxim de conversii simultane la</s:String>
+    <s:String x:Key="ValueChangeRequiresRestart">(activarea limitatorului necesită restartarea aplicației pentru a funcționa)</s:String>
+    <s:String x:Key="ConversionsLimitingExplanation">Fiecare conversie ocupă aproximativ un nucleu. De exemplu dacă ai un procesor cu 4 nuclee, limitând aplicația la 3 conversii simultane se vor folosi 3 nuclee din 4. Acest lucru se poate observa și în Task Manager unde utilizarea CPU va fi puțin mai mult de 75%.
+
+Este recomandat să utilizați un nucleu mai puțin decât are procesorul dvs. Dacă procesorul are 4 nuclee, folosiți 3 prin limitarea numărului de conversii la 3, dacă aveți 3 nuclee, folosiți 2 prin limitarea numărului de conversii la 2, etc.</s:String>
+    <s:String x:Key="FileConversion">Conversie fișiere</s:String>
+    <s:String x:Key="General">General</s:String>
+    <s:String x:Key="SavePlaylistInUniqueDirectory">Salvează fiecare playlist într-un dosar diferit</s:String>
+    <s:String x:Key="Playlist">Playlist</s:String>
+    <s:String x:Key="OpenDestinationFolder">Deschide dosarul destinație</s:String>
+    <s:String x:Key="ConfirmExit">Confirmă la ieșire</s:String>
+    <s:String x:Key="OpenDestinationFolderOnFinish">Deschide dosarul destinație la final</s:String>
+    <s:String x:Key="TagAudioFile">Adaugă etichete și imagini de copertă la fișierele audio</s:String>
+    <s:String x:Key="Than">de</s:String>
+    <s:String x:Key="Filter">Filtru</s:String>
+    <s:String x:Key="DownloadFilter">Descarcă doar videoclipuri</s:String>
+    <s:String x:Key="Longer">mai lungi</s:String>
+    <s:String x:Key="Shorter">mai scurte</s:String>
+    <s:String x:Key="FileDoesNotExist">Fișierul {0} nu există.</s:String>
+    <s:String x:Key="Retry">Reîncearcă</s:String>
+    <s:String x:Key="Of">din</s:String>
+    <s:String x:Key="FileNamePattern">Modelul numelui fișierelor: </s:String>
+    <s:String x:Key="SkipExisting">Sari peste fișierele existente</s:String>
+    <s:String x:Key="ResetToDefault">Resetare la setările implicite</s:String>
+    <s:String x:Key="FileNamePatternTitle">Modelul numelui fișierelor</s:String>
+    <s:String x:Key="FileNamePattenExplanation">Modelul numelui fișierelor permite modificarea automată a numelui bazată pe acești parametri:
+$title: Titlul videoclipului
+$index: Index-ul videoclipului în playlist
+$artist: Numele artistului melodiei (dacă se aplică)
+$songtitle: Titlul melodiei
+$channel: Numele canalului care a încărcat videoclipul
+$videoid: ID-ul unic al videoclipului (extras din URL)
+$playlist: Titlul playlist-ului
+
+De exemplu, dacă modelul meu pentru fișiere este "song: [$playlist] $artist - $songtitle ($channel) $index" fișierul rezultat ar avea numele "song: [Example] Infected Mushroom - Spitfire (Monstercat) 1".
+Puteți adăuga orice text între parametri, doar parametrii vor fi înlocuiți. Vă rugăm țineți cont că nu toți parametri sunt întotdeauna valabili (de exemplu, când descărcați un singur videoclip, $playlisttitle nu este disponibil), iar în cazul în care lipsesc, vor fi eliminate din numele fișierului</s:String>
+    <s:String x:Key="CopyToClipboard">Copiază în clipboard</s:String>
+    <s:String x:Key="SaveToTextFile">Salvează ca fișier text</s:String>
+    <s:String x:Key="VideoLanguage">Video Language: </s:String>
+
+    <!-- revamp: new interface strings -->
+    <s:String x:Key="NavDownload">Descarcă</s:String>
+    <s:String x:Key="NavDownloads">Descărcări</s:String>
+    <s:String x:Key="ToggleTheme">Comută tema deschisă/închisă</s:String>
+    <s:String x:Key="ChangeLanguage">Schimbă limba</s:String>
+    <s:String x:Key="HeroTitle">Ce vrei să descarci?</s:String>
+    <s:String x:Key="HeroSubtitle">Copiază linkul de pe YouTube și lipește-l mai jos.</s:String>
+    <s:String x:Key="ClipboardFound">Există un link YouTube în clipboard</s:String>
+    <s:String x:Key="UseThisLink">Folosește acest link</s:String>
+    <s:String x:Key="Dismiss">Închide</s:String>
+    <s:String x:Key="LinkLabel">Link YouTube</s:String>
+    <s:String x:Key="LinkHelp">Videoclip, playlist sau canal. Pentru a descărca mai multe deodată, lipește câte un link pe linie.</s:String>
+    <s:String x:Key="LinkPlaceholder">Lipește linkul aici — ex. https://www.youtube.com/playlist?list=…</s:String>
+    <s:String x:Key="Paste">Lipește</s:String>
+    <s:String x:Key="Clear">Șterge</s:String>
+    <s:String x:Key="FindVideos">Caută videoclipuri</s:String>
+    <s:String x:Key="OrDragLink">sau trage un link din browser în această casetă</s:String>
+    <s:String x:Key="TypeChannel">Canal</s:String>
+    <s:String x:Key="TypeMany">Mai multe linkuri</s:String>
+    <s:String x:Key="TypeManyHint">Câte un link pe linie</s:String>
+    <s:String x:Key="DetectedVideo">Link de videoclip detectat</s:String>
+    <s:String x:Key="DetectedPlaylist">Link de playlist detectat</s:String>
+    <s:String x:Key="DetectedChannel">Link de canal detectat</s:String>
+    <s:String x:Key="DetectedMany">{0} linkuri detectate — vor fi încărcate împreună</s:String>
+    <s:String x:Key="NotAYoutubeLink">Nu pare a fi un link YouTube</s:String>
+    <s:String x:Key="OneLineInvalid">Una dintre linii nu pare a fi un link YouTube</s:String>
+    <s:String x:Key="LoadingTitle">Se caută videoclipurile…</s:String>
+    <s:String x:Key="LoadingSubtitle">Se citesc titlurile, videoclipurile și duratele</s:String>
+    <s:String x:Key="LoadFailed">Linkul nu a putut fi încărcat</s:String>
+    <s:String x:Key="ChangeLink">Schimbă linkul</s:String>
+    <s:String x:Key="VideoFound">Videoclip găsit</s:String>
+    <s:String x:Key="PlaylistFound">Playlist găsit</s:String>
+    <s:String x:Key="ChannelFound">Canal găsit</s:String>
+    <s:String x:Key="LinksFound">Linkuri găsite</s:String>
+    <s:String x:Key="LinksCount">{0} linkuri</s:String>
+    <s:String x:Key="VideosCount">{0} videoclipuri</s:String>
+    <s:String x:Key="OneVideo">1 videoclip</s:String>
+    <s:String x:Key="AllSelected">Toate selectate</s:String>
+    <s:String x:Key="SelectedOfTotal">{0} din {1} selectate</s:String>
+    <s:String x:Key="FilterAll">Toate</s:String>
+    <s:String x:Key="FilterSelected">Selectate</s:String>
+    <s:String x:Key="FilterExisting">Deja descărcate</s:String>
+    <s:String x:Key="SearchInList">Caută în listă</s:String>
+    <s:String x:Key="GridView">Grilă</s:String>
+    <s:String x:Key="ListView">Listă</s:String>
+    <s:String x:Key="AlreadyInFolder">Există deja în dosar</s:String>
+    <s:String x:Key="NothingFound">Nu s-a găsit nimic.</s:String>
+    <s:String x:Key="AudioOnlyMode">Doar audio</s:String>
+    <s:String x:Key="Quality">Calitate</s:String>
+    <s:String x:Key="Format">Format</s:String>
+    <s:String x:Key="BestQuality">Cea mai bună calitate</s:String>
+    <s:String x:Key="OriginalAudio">Original (fără conversie)</s:String>
+    <s:String x:Key="OriginalBitrate">Calitate originală</s:String>
+    <s:String x:Key="ChangeFolder">Schimbă</s:String>
+    <s:String x:Key="MoreOptions">Mai multe opțiuni</s:String>
+    <s:String x:Key="ItemsSelected">{0} selectate</s:String>
+    <s:String x:Key="OneItemSelected">1 selectat</s:String>
+    <s:String x:Key="NothingSelected">Nimic selectat</s:String>
+    <s:String x:Key="TotalDuration">{0} în total</s:String>
+    <s:String x:Key="AddedToDownloads">{0} elemente adăugate la descărcări</s:String>
+    <s:String x:Key="OneAddedToDownloads">1 element adăugat la descărcări</s:String>
+    <s:String x:Key="View">Vezi</s:String>
+    <s:String x:Key="PauseAll">Pune totul pe pauză</s:String>
+    <s:String x:Key="ResumeAll">Reia tot</s:String>
+    <s:String x:Key="ClearCompleted">Șterge finalizatele</s:String>
+    <s:String x:Key="OpenFolder">Deschide dosarul</s:String>
+    <s:String x:Key="FilterActive">În curs</s:String>
+    <s:String x:Key="FilterDone">Finalizate</s:String>
+    <s:String x:Key="FilterErrors">Cu erori</s:String>
+    <s:String x:Key="SectionActive">În curs</s:String>
+    <s:String x:Key="SectionDone">Finalizate</s:String>
+    <s:String x:Key="StatusQueued">În coadă</s:String>
+    <s:String x:Key="StatusPaused">Pe pauză la {0}%</s:String>
+    <s:String x:Key="StatusDone">Finalizat</s:String>
+    <s:String x:Key="StatusSkipped">Exista deja — omis</s:String>
+    <s:String x:Key="StatusError">Eșuat: {0}</s:String>
+    <s:String x:Key="TimeLeft">mai sunt {0}</s:String>
+    <s:String x:Key="Pause">Pauză</s:String>
+    <s:String x:Key="Resume">Reia</s:String>
+    <s:String x:Key="Cancel">Anulează</s:String>
+    <s:String x:Key="RemoveFromList">Elimină din listă</s:String>
+    <s:String x:Key="ShowInFolder">Arată în dosar</s:String>
+    <s:String x:Key="SummaryInProgress">{0} în curs</s:String>
+    <s:String x:Key="SummaryQueued">{0} în coadă</s:String>
+    <s:String x:Key="SummaryPaused">{0} pe pauză</s:String>
+    <s:String x:Key="SummaryDone">{0} finalizate</s:String>
+    <s:String x:Key="SummaryErrors">{0} cu erori</s:String>
+    <s:String x:Key="NoDownloadsTitle">Nicio descărcare</s:String>
+    <s:String x:Key="NoDownloadsText">Lipește un link pe ecranul Descarcă pentru a începe.</s:String>
+    <s:String x:Key="DownloadSomething">Descarcă ceva</s:String>
+    <s:String x:Key="DownloadsFinished">Descărcări finalizate</s:String>
+    <s:String x:Key="FilesSaved">{0} fișiere salvate</s:String>
+    <s:String x:Key="OneFileSaved">1 fișier salvat</s:String>
+    <s:String x:Key="NoVideoStream">Nu există niciun flux video disponibil pentru acest videoclip</s:String>
+    <s:String x:Key="NoAudioStream">Nu există niciun flux audio disponibil pentru acest videoclip</s:String>
+    <s:String x:Key="ConversionFailed">ffmpeg nu a putut procesa fișierul</s:String>
+    <s:String x:Key="SecFileNames">Numele fișierelor</s:String>
+    <s:String x:Key="SecAppearance">Aspect</s:String>
+    <s:String x:Key="SecAdvanced">Avansat</s:String>
+    <s:String x:Key="DefaultFolder">Dosar implicit</s:String>
+    <s:String x:Key="ConcurrentDownloads">Descărcări simultane</s:String>
+    <s:String x:Key="ConcurrentDownloadsHint">Câte videoclipuri se descarcă în același timp</s:String>
+    <s:String x:Key="SkipExistingHint">Nu descarcă din nou ce se află deja în dosar</s:String>
+    <s:String x:Key="DetectClipboard">Detectează linkurile copiate</s:String>
+    <s:String x:Key="DetectClipboardHint">Sugerează linkul când copiezi ceva de pe YouTube</s:String>
+    <s:String x:Key="NotifyWhenDone">Notifică la final</s:String>
+    <s:String x:Key="NotifyWhenDoneHint">Afișează o notificare Windows când aplicația rulează în fundal</s:String>
+    <s:String x:Key="NamePattern">Model de nume</s:String>
+    <s:String x:Key="NamePreview">Va arăta așa:</s:String>
+    <s:String x:Key="PreferredQuality">Calitate preferată</s:String>
+    <s:String x:Key="VideoFormat">Format video</s:String>
+    <s:String x:Key="AudioTrackLanguage">Limba pistei audio</s:String>
+    <s:String x:Key="AudioTrackLanguageHint">Pentru videoclipuri cu piste audio dublate</s:String>
+    <s:String x:Key="DefaultTrack">Cea implicită a videoclipului</s:String>
+    <s:String x:Key="CaptionsLanguageLabel">Limba subtitrărilor</s:String>
+    <s:String x:Key="AudioFormat">Format audio</s:String>
+    <s:String x:Key="AudioFormatHint">Folosit când alegi „Doar audio”</s:String>
+    <s:String x:Key="AudioQuality">Calitate audio</s:String>
+    <s:String x:Key="TagsHint">Titlu, artist, album și miniatura drept copertă</s:String>
+    <s:String x:Key="ThemeMode">Temă</s:String>
+    <s:String x:Key="ThemeSystem">Sistem</s:String>
+    <s:String x:Key="ThemeLight">Deschisă</s:String>
+    <s:String x:Key="ThemeDark">Închisă</s:String>
+    <s:String x:Key="LanguageHint">Limba interfeței aplicației</s:String>
+    <s:String x:Key="LimitConversionsLabel">Limitează conversiile simultane</s:String>
+    <s:String x:Key="LogFile">Jurnal de erori</s:String>
+    <s:String x:Key="LogFileHint">Util când raportezi o problemă</s:String>
+    <s:String x:Key="OpenLogFolder">Deschide dosarul</s:String>
+    <s:String x:Key="RestoreDefaults">Restabilește</s:String>
+    <s:String x:Key="RestoreDefaultsHint">Revino la setările implicite</s:String>
+    <s:String x:Key="RestoreDefaultsConfirm">Toate setările vor reveni la valorile implicite (limba se păstrează). Continui?</s:String>
+    <s:String x:Key="ReportProblem">Raportează o problemă</s:String>
+    <s:String x:Key="VersionFmt">Versiunea {0}</s:String>
+    <s:String x:Key="AboutDisclaimer">Gratuit și open source, bazat pe YouTube Playlist Downloader original, creat de shaked6540. Nu este afiliat cu YouTube sau Google. Descărcarea videoclipurilor poate încălca termenii de utilizare YouTube — folosește-l responsabil.</s:String>
+    <s:String x:Key="ExitWhileDownloading">Mai sunt {0} descărcări în curs. Dacă ieși acum, vor fi oprite. Ieși oricum?</s:String>
+    <s:String x:Key="Ok">OK</s:String>
+    <s:String x:Key="Copied">Copiat în clipboard</s:String>
+    <s:String x:Key="RateLimited">YouTube blochează temporar cererile anonime de pe această conexiune. Încearcă mai târziu sau conectează-te cu contul YouTube din Setări.</s:String>
+    <s:String x:Key="NoConnection">YouTube nu poate fi accesat. Verifică conexiunea la internet.</s:String>
+    <s:String x:Key="SignInHint">Folosește contul meu YouTube</s:String>
+    <s:String x:Key="YoutubeAccount">Cont YouTube</s:String>
+    <s:String x:Key="YoutubeAccountHint">Conectează-te pentru a evita limitele impuse de YouTube utilizării anonime. Sesiunea rămâne doar pe acest computer.</s:String>
+    <s:String x:Key="ImportCookies">Importă cookies.txt</s:String>
+    <s:String x:Key="RemoveCookies">Elimină</s:String>
+    <s:String x:Key="NoCookies">Neconectat</s:String>
+    <s:String x:Key="CookiesInvalid">Nu s-au găsit cookie-uri YouTube în acest fișier. Exportă-l din nou în timp ce ești conectat la youtube.com.</s:String>
+    <s:String x:Key="ContactHelp">Ai găsit o problemă sau ai o sugestie? Deschide un issue pe GitHub și descrie ce s-a întâmplat (și, dacă poți, atașează jurnalul de erori din Setări › Avansat). Fiecare issue este analizat și rezolvat.</s:String>
+    <s:String x:Key="SignInWithYoutube">Conectează-te cu YouTube</s:String>
+    <s:String x:Key="SignInWindowHint">Conectează-te la contul Google. Această fereastră se închide singură când termini.</s:String>
+    <s:String x:Key="SignedIn">Conectat la YouTube</s:String>
+    <s:String x:Key="SignInUnavailable">Fereastra de conectare nu a putut fi deschisă deoarece Microsoft Edge WebView2 nu este instalat. Folosește „Importă un fișier cookies.txt”.</s:String>
+    <s:String x:Key="ImportCookiesInstead">Sau importă un fișier cookies.txt</s:String>
+    <s:String x:Key="FfmpegMissingTitle">Mai e un singur pas</s:String>
+    <s:String x:Key="FfmpegMissingMessage">Pentru a uni video și audio și a converti muzica, aplicația folosește FFmpeg, un program gratuit. Nu este încă pe acest computer. Îl descarci acum? Aproximativ {0} MB, o singură dată.</s:String>
+    <s:String x:Key="NotNow">Nu acum</s:String>
+    <s:String x:Key="DownloadFfmpeg">Descarcă</s:String>
+    <s:String x:Key="DownloadingFfmpeg">Se descarcă FFmpeg</s:String>
+    <s:String x:Key="DownloadingFfmpegMessage">Se întâmplă o singură dată. Descărcarea ta începe imediat ce se termină.</s:String>
+    <s:String x:Key="FfmpegDownloadFailed">FFmpeg nu a putut fi descărcat.</s:String>
+    <s:String x:Key="FfmpegMissingError">Lipsește FFmpeg. Pornește din nou descărcarea și aplicația îți va oferi instalarea.</s:String>
+    <!-- /revamp -->
+</ResourceDictionary> 

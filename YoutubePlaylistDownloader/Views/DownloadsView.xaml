@@ -1,0 +1,212 @@
+<UserControl x:Class="YoutubePlaylistDownloader.Views.DownloadsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:YoutubePlaylistDownloader.Controls"
+             x:Name="Page">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="QueueItem">
+            <Border x:Name="row" BorderBrush="{DynamicResource Line}" BorderThickness="0,1,0,0" Padding="14,14,10,14" Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Width="112" Height="63" CornerRadius="8" Background="{DynamicResource Chip}" VerticalAlignment="Center">
+                        <Border CornerRadius="8">
+                            <Border.Background>
+                                <ImageBrush ImageSource="{Binding ThumbnailUrl, Converter={StaticResource ImageUrl}, ConverterParameter=240}" Stretch="UniformToFill" />
+                            </Border.Background>
+                        </Border>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Margin="16,0,12,0" VerticalAlignment="Center">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="12,0,0,0" VerticalAlignment="Center">
+                                <c:Icon Width="14" Height="14" Foreground="{DynamicResource Text2}">
+                                    <c:Icon.Style>
+                                        <Style TargetType="c:Icon" BasedOn="{StaticResource {x:Type c:Icon}}">
+                                            <Setter Property="Data" Value="{StaticResource I.Film}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsAudio}" Value="True">
+                                                    <Setter Property="Data" Value="{StaticResource I.Music}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </c:Icon.Style>
+                                </c:Icon>
+                                <TextBlock Text="{Binding FormatLabel}" Style="{StaticResource T.Small}" Margin="5,0,0,0" />
+                            </StackPanel>
+                            <TextBlock Text="{Binding Title}" Foreground="{DynamicResource Text}" FontSize="15" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        </DockPanel>
+
+                        <ProgressBar x:Name="bar" Margin="0,10,0,6" Maximum="100" Value="{Binding Progress, Mode=OneWay}" IsIndeterminate="{Binding IsIndeterminate, Mode=OneWay}"
+                                     Visibility="{Binding ShowBar, Converter={StaticResource Visible}}" />
+
+                        <DockPanel x:Name="statusLine" Margin="0,0,0,0">
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding DetailText}" Style="{StaticResource T.Small}" Margin="12,0,0,0" />
+                            <StackPanel Orientation="Horizontal">
+                                <c:Icon x:Name="statusIcon" Width="14" Height="14" Margin="0,0,5,0" Visibility="Collapsed" />
+                                <TextBlock x:Name="status" Text="{Binding StatusText}" FontSize="12" FontWeight="SemiBold" Foreground="{DynamicResource Text2}" TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Style="{StaticResource Btn.Round}" c:Ui.Icon="{StaticResource I.Pause}" Visibility="{Binding CanPause, Converter={StaticResource Visible}}"
+                                Command="{Binding DataContext.PauseCommand, ElementName=Page}" CommandParameter="{Binding}"
+                                ToolTip="{DynamicResource Pause}" AutomationProperties.Name="{DynamicResource Pause}" />
+                        <Button Style="{StaticResource Btn.Round}" c:Ui.Icon="{StaticResource I.Play}" Visibility="{Binding CanResume, Converter={StaticResource Visible}}"
+                                Command="{Binding DataContext.ResumeCommand, ElementName=Page}" CommandParameter="{Binding}"
+                                ToolTip="{DynamicResource Resume}" AutomationProperties.Name="{DynamicResource Resume}" />
+                        <Button Style="{StaticResource Btn.Round}" c:Ui.Icon="{StaticResource I.Retry}" Visibility="{Binding IsError, Converter={StaticResource Visible}}"
+                                Command="{Binding DataContext.RetryCommand, ElementName=Page}" CommandParameter="{Binding}"
+                                ToolTip="{DynamicResource Retry}" AutomationProperties.Name="{DynamicResource Retry}" />
+                        <Button Style="{StaticResource Btn.Round}" c:Ui.Icon="{StaticResource I.Folder}" Visibility="{Binding IsFinished, Converter={StaticResource Visible}}"
+                                Command="{Binding DataContext.ShowInFolderCommand, ElementName=Page}" CommandParameter="{Binding}"
+                                ToolTip="{DynamicResource ShowInFolder}" AutomationProperties.Name="{DynamicResource ShowInFolder}" />
+                        <Button Style="{StaticResource Btn.Round}" c:Ui.Icon="{StaticResource I.X}" Visibility="{Binding IsActive, Converter={StaticResource Visible}}"
+                                Command="{Binding DataContext.RemoveCommand, ElementName=Page}" CommandParameter="{Binding}"
+                                ToolTip="{DynamicResource Cancel}" AutomationProperties.Name="{DynamicResource Cancel}" />
+                        <Button Style="{StaticResource Btn.Round}" c:Ui.Icon="{StaticResource I.Trash}" Visibility="{Binding IsActive, Converter={StaticResource Collapsed}}"
+                                Command="{Binding DataContext.RemoveCommand, ElementName=Page}" CommandParameter="{Binding}"
+                                ToolTip="{DynamicResource RemoveFromList}" AutomationProperties.Name="{DynamicResource RemoveFromList}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="Downloading">
+                    <Setter TargetName="status" Property="Foreground" Value="{DynamicResource Text}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Converting">
+                    <Setter TargetName="status" Property="Foreground" Value="{DynamicResource Text}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Paused">
+                    <Setter TargetName="bar" Property="Foreground" Value="{DynamicResource Text2}" />
+                    <Setter TargetName="statusIcon" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="statusIcon" Property="Data" Value="{StaticResource I.Pause}" />
+                    <Setter TargetName="statusIcon" Property="Foreground" Value="{DynamicResource Text2}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Done">
+                    <Setter TargetName="status" Property="Foreground" Value="{DynamicResource Green}" />
+                    <Setter TargetName="statusIcon" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="statusIcon" Property="Data" Value="{StaticResource I.CheckCircle}" />
+                    <Setter TargetName="statusIcon" Property="Foreground" Value="{DynamicResource Green}" />
+                    <Setter TargetName="statusLine" Property="Margin" Value="0,6,0,0" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Skipped">
+                    <Setter TargetName="statusIcon" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="statusIcon" Property="Data" Value="{StaticResource I.CheckCircle}" />
+                    <Setter TargetName="statusIcon" Property="Foreground" Value="{DynamicResource Text2}" />
+                    <Setter TargetName="statusLine" Property="Margin" Value="0,6,0,0" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Error">
+                    <Setter TargetName="status" Property="Foreground" Value="{DynamicResource Red}" />
+                    <Setter TargetName="statusIcon" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="statusIcon" Property="Data" Value="{StaticResource I.Alert}" />
+                    <Setter TargetName="statusIcon" Property="Foreground" Value="{DynamicResource Red}" />
+                    <Setter TargetName="statusLine" Property="Margin" Value="0,6,0,0" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Margin="40,4,40,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="True" Margin="0,0,0,20">
+            <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Bottom">
+                <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Pause}" Content="{DynamicResource PauseAll}" Margin="8,4,0,0"
+                        Command="{Binding PauseAllCommand}" Visibility="{Binding HasPausable, Converter={StaticResource Visible}}" />
+                <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Play}" Content="{DynamicResource ResumeAll}" Margin="8,4,0,0"
+                        Command="{Binding ResumeAllCommand}" Visibility="{Binding HasResumable, Converter={StaticResource Visible}}" />
+                <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Check}" Content="{DynamicResource ClearCompleted}" Margin="8,4,0,0"
+                        Command="{Binding ClearFinishedCommand}" Visibility="{Binding HasFinished, Converter={StaticResource Visible}}" />
+                <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Folder}" Content="{DynamicResource OpenFolder}" Margin="8,4,0,0"
+                        Command="{Binding OpenFolderCommand}" />
+            </WrapPanel>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource NavDownloads}" Style="{StaticResource T.H1}" />
+                <TextBlock Text="{Binding Summary}" Style="{StaticResource T.Sub}" Margin="0,4,0,0" />
+            </StackPanel>
+        </DockPanel>
+
+        <WrapPanel Grid.Row="1" Margin="0,0,0,8">
+            <RadioButton Style="{StaticResource ChipRadio}" Content="{DynamicResource FilterAll}" Margin="0,0,8,8" IsChecked="{Binding Filter, Converter={StaticResource Equals}, ConverterParameter=all}" />
+            <RadioButton Style="{StaticResource ChipRadio}" Content="{DynamicResource FilterActive}" Margin="0,0,8,8" IsChecked="{Binding Filter, Converter={StaticResource Equals}, ConverterParameter=active}" />
+            <RadioButton Style="{StaticResource ChipRadio}" Content="{DynamicResource FilterDone}" Margin="0,0,8,8" IsChecked="{Binding Filter, Converter={StaticResource Equals}, ConverterParameter=done}" />
+            <RadioButton Style="{StaticResource ChipRadio}" Content="{DynamicResource FilterErrors}" Margin="0,0,8,8" IsChecked="{Binding Filter, Converter={StaticResource Equals}, ConverterParameter=error}" />
+        </WrapPanel>
+
+        <ListBox Grid.Row="2" ItemsSource="{Binding Items}" ItemTemplate="{StaticResource QueueItem}" Background="Transparent" BorderThickness="0" Padding="0,0,0,40"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+                 VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.ScrollUnit="Pixel"
+                 VirtualizingPanel.VirtualizationMode="Recycling"
+                 Visibility="{Binding IsEmpty, Converter={StaticResource Collapsed}}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Focusable" Value="False" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <!-- ListBoxItem defaults to the system text color (black); follow the theme instead. -->
+                    <Setter Property="Foreground" Value="{DynamicResource Text}" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <ContentPresenter />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="GroupItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="GroupItem">
+                                        <StackPanel Margin="0,0,0,8">
+                                            <Grid Margin="4,16,0,10">
+                                                <TextBlock x:Name="active" Text="{DynamicResource SectionActive}" Style="{StaticResource T.Section}" FontSize="13" />
+                                                <TextBlock x:Name="done" Text="{DynamicResource SectionDone}" Style="{StaticResource T.Section}" FontSize="13" Visibility="Collapsed" />
+                                            </Grid>
+                                            <Border Style="{StaticResource Box}" ClipToBounds="True">
+                                                <!-- pulled up 1px so the first row's divider hides under the box border -->
+                                                <ItemsPresenter Margin="0,-1,0,0" />
+                                            </Border>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Name}" Value="1">
+                                                <Setter TargetName="active" Property="Visibility" Value="Collapsed" />
+                                                <Setter TargetName="done" Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListBox.GroupStyle>
+        </ListBox>
+
+        <!-- empty state -->
+        <Grid Grid.Row="2" VerticalAlignment="Top" Margin="0,8,0,0" Visibility="{Binding IsEmpty, Converter={StaticResource Visible}}">
+            <Rectangle RadiusX="24" RadiusY="24" Stroke="{DynamicResource Line2}" StrokeThickness="1.5" StrokeDashArray="4 3" />
+            <StackPanel Margin="24,72" HorizontalAlignment="Center">
+                <Border Width="64" Height="45" CornerRadius="13" Background="{DynamicResource Red}" HorizontalAlignment="Center" Margin="0,0,0,16">
+                    <c:Icon Data="{StaticResource I.Logo}" Width="30" Height="30" Foreground="White" StrokeThickness="2.4" />
+                </Border>
+                <TextBlock Text="{DynamicResource NoDownloadsTitle}" Style="{StaticResource T.H2}" FontSize="20" HorizontalAlignment="Center" />
+                <TextBlock Text="{DynamicResource NoDownloadsText}" Style="{StaticResource T.Sub}" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,6,0,16" />
+                <Button Style="{StaticResource Btn.Red}" Content="{DynamicResource DownloadSomething}" Command="{Binding GoDownloadCommand}" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

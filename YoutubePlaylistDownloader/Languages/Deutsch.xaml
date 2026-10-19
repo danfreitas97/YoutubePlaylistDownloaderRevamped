@@ -1,0 +1,315 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+                    xml:space="preserve">
+    
+    <s:String x:Key="Title">YouTube Playlist Downloader</s:String>
+    <s:String x:Key="Skipping">Datei ist bereits vorhanden, Überspringen...</s:String>
+    <FlowDirection x:Key="FlowDirection">LeftToRight</FlowDirection>
+    <s:String x:Key="InsertYoutubePlaylistLinkHere">YouTube-Link hier einfügen</s:String>
+    <s:String x:Key="Exit">Beenden</s:String>
+    <s:String x:Key="ExitMessage">Möchten Sie wirklich beenden?</s:String>
+    <s:String x:Key="Yes">Ja</s:String>
+    <s:String x:Key="No">Nein</s:String>
+    <s:String x:Key="Error">Fehler</s:String>
+    <s:String x:Key="ErrorMessage">Ein unerwarteter Fehler ist beim Ausführen dieser Aktion aufgetreten. Bitte kontaktieren Sie Ihren Administrator, um das Problem zu beheben.</s:String>
+    <s:String x:Key="Settings">Einstellungen</s:String>
+    <s:String x:Key="Preferences">Präferenzen</s:String>
+    <s:String x:Key="Theme">Farbe</s:String>
+    <s:String x:Key="Language">Sprache</s:String>
+    <s:String x:Key="Back">zurück</s:String>
+    <s:String x:Key="SaveAndBackToDownload">Speichern und zurück zum Hauptmenü</s:String>
+    <s:String x:Key="DarkTheme">Dunkler Hintergrund</s:String>
+    <s:String x:Key="Name">Name: </s:String>
+    <s:String x:Key="Description">Beschreibung: </s:String>
+    <s:String x:Key="Views">Aufrufe: </s:String>
+    <s:String x:Key="SaveDirectory">Videos speichern unter: </s:String>
+    <s:String x:Key="CurrentlyDownloading">Derzeit herunterladend: </s:String>
+    <s:String x:Key="TotalProgress">Bis jetzt heruntergeladen: </s:String>
+    <s:String x:Key="AllDone">Fertig.</s:String>
+    <s:String x:Key="Canceling">Downloads werden abgebrochen, bitte warten Sie...</s:String>
+    <s:String x:Key="Videos">Videos</s:String>
+    <s:String x:Key="Download">Download</s:String>
+    <s:String x:Key="ConvertToMp3">Konvertieren von Videos zu </s:String>
+    <s:String x:Key="SaveVideoFormat">Videos speichern als </s:String>
+    <s:String x:Key="StillConverting">Wird konvertiert</s:String>
+    <s:String x:Key="files">Dateien</s:String>
+    <s:String x:Key="Author">Autor: </s:String>
+    <s:String x:Key="PlaylistTitle">Titel: </s:String>
+    <s:String x:Key="Loading">Lädt...</s:String>
+    <HorizontalAlignment x:Key="LeftAlignment">Left</HorizontalAlignment>
+    <s:String x:Key="About">Info</s:String>
+    <s:String x:Key="Home">Hauptmenü</s:String>
+    <s:String x:Key="Prefer">Bevorzugen von Videos mit einer Auflösung von: </s:String>
+    <s:String x:Key="AreYouSureExit">Möchten Sie wirklich verlassen?</s:String>
+    <s:String x:Key="TotalVideos">Videos gesamt: </s:String>
+    <s:String x:Key="BitRate">und Ändern der Bitrate zu</s:String>
+    <s:String x:Key="NewVersionAvailable">Neue Version verfügbar</s:String>
+    <s:String x:Key="DoYouWantToUpdate">Eine neue Version ist verfügbar, möchten Sie das Programm aktualisieren?
+Das ist neu: </s:String>
+    <s:String x:Key="DownloadingUpdateSetup">Derzeit herunterladend: Aktualisierung</s:String>
+    <s:String x:Key="UpdateCancelled">Aktualisierung wurde abgebrochen.</s:String>
+    <s:String x:Key="UpdateComplete">Herunterladen abgeschlossen.</s:String>
+    <s:String x:Key="UpdateWhenIExit">nach Beenden aktualisieren</s:String>
+    <s:String x:Key="UpdateAndExit">schließen und jetzt aktualisieren</s:String>
+    <s:String x:Key="UpdateFailed">Aktualisierung fehlgeschlagen</s:String>
+    <s:String x:Key="CannotUpdate">Kann derzeit nicht aktualisieren, bitte versuchen Sie, das Programm neu zu starten und vergewissern Sie sich, dass Sie mit dem Internet verbunden sind.
+Fehlermeldung: </s:String>
+    <s:String x:Key="CouldntDownload">Einige Videos konnten nicht heruntergeladen werden</s:String>
+    <s:String x:Key="ListOfNotDownloadedVideos">Dies ist eine Liste der Videos, die nicht heruntergeladen werden konnten, und der Grund, warum sie nicht heruntegeladen werden konnten: </s:String>
+    <s:String x:Key="Options">Optionen</s:String>
+    <s:String x:Key="CheckForUpdates">nach Aktualisierungen suchen</s:String>
+    <s:String x:Key="NoUpdates">Keine Aktualisierungen verfügbar</s:String>
+    <s:String x:Key="NoUpdatesAvailable">Derzeit sind keine Aktualisierungen verfügbar, Sie haben die neuste Version.</s:String>
+    <s:String x:Key="PlaylistIndex">Herunterladen ab Video Nr. </s:String>
+    <s:String x:Key="UntilIndex">bis Video Nr. </s:String>
+    <s:String x:Key="LeaveEmptyOrZeroForUntilTheEnd">(lassen Sie dies leer oder geben Sie 0 ein, um alle Video bis zum Ende der Playlist herunterzuladen)</s:String>
+    <s:String x:Key="NoVideosToDownload">konnte keine Videos zum Herunterladen finden</s:String>
+    <s:String x:Key="ThereAreNoVideosToDownload">Es gibt keine herunterladbaren Videos mit den von Ihnen angegebenen Parametern.</s:String>
+    <s:String x:Key="UpdateNow">jetzt aktualisieren</s:String>
+    <s:String x:Key="Subscriptions">Abonnements</s:String>
+    <s:String x:Key="AutomaticllyDownloadSubscriptions">Automatisch alle Videos dieser Kanäle herunterladen</s:String>
+    <s:String x:Key="InsertChannelLink">Kanal-Link einfügen</s:String>
+    <s:String x:Key="Remove">entfernen</s:String>
+    <s:String x:Key="Id">ID: </s:String>
+    <s:String x:Key="Save">speichern</s:String>
+    <s:String x:Key="PreferFPS">Videos mit der höchsten Bildrate bevorzugen</s:String>
+    <s:String x:Key="AudioOnly">Audio sauber herunterladen, ohne es in ein anderes Format zu konvertieren.</s:String>
+    <s:String x:Key="StillDownloadingSubscriptionsExit">Das Programm lädt noch die Videos Ihrer Abonnements herunter, klicken Sie "Ja", wird das Programm beendet und die Videos werden erst heruntergeladen, wenn Sie das Programm wieder starten.
+Möchten Sie wirklich beenden?</s:String>
+    <s:String x:Key="LastVideoDownloadDate">Zuletzt aktualisiert am: </s:String>
+    <s:String x:Key="Help">Hilfe</s:String>
+    <s:String x:Key="SubscriptionsHelp">Abonnements sind Kanäle, deren neue Videos das Programm automatisch herunterlädt. 
+        
+Beispiel: Wenn Sie am 1. Januar ein Abonnement für den Kanal "x" einrichten und der Kanal "x" am 3. Januar ein Video hochlädt, wird es automatisch heruntergeladen.
+
+Voherige Videos werden nicht heruntergeladen und Videos werden nicht doppelt heruntegeladen, auch wenn Sie die Datei löschen. 
+        
+Alle Abonnements sind anpassbar und haben Ihre eigenen Einstellungen. Um auf diese zuzugreifen, klicken Sie im Hauptmenü auf "Abonnements" und dann auf "Einstellungen" neben dem Kanal, dessen Abonnement Sie anpassen wollen.
+        
+Neue Videos können nur heruntergeladen werden, während das Programm ausgeführt wird.
+    </s:String>
+    <s:String x:Key="ContactTheDeveloper">Kontakt</s:String>
+    <s:String x:Key="AutomaticallyCheckForUpdates">Automatisch nach Aktualisierungen suchen, wenn das Programm gestartet wird</s:String>
+    <s:String x:Key="WhatsNew">Was ist neu?</s:String>
+    <s:String x:Key="SubscriptionsUpdateDelay">Aktualisieren von Abonnements alle</s:String>
+    <s:String x:Key="Minutes">minuten sind</s:String>
+    <s:String x:Key="SaveDownloadOptions">Meine Download-Präferenzen speichern</s:String>
+    <s:String x:Key="DownloadSpeed">Download-Geschwindigkeit: </s:String>
+    <s:String x:Key="Changelog">Changelog</s:String>
+    <s:String x:Key="Search">Suchen</s:String>
+    <s:String x:Key="Queue">Warteschlange</s:String>
+    <s:String x:Key="Downloading">Herunterladen...</s:String>
+    <s:String x:Key="Converting">Konvertieren...</s:String>
+    <s:String x:Key="DownloadInBackground">Zur Warteschlange hinzufügen</s:String>
+    <s:String x:Key="Audio">Audio</s:String>
+    <s:String x:Key="Video">Video</s:String>
+    <s:String x:Key="DownloadCaptions">Untertitel herunterladen</s:String>
+    <s:String x:Key="CaptionsLanguage">Untertitel-Sprache: </s:String>
+    <s:String x:Key="BulkDownload">Massen-Download</s:String>
+    <s:String x:Key="LimitConverstions" >Maximale gleichzeitige Konvertierungen: </s:String>
+    <s:String x:Key="ValueChangeRequiresRestart">(aktivieren dieser Beschränkung erfordert
+einen Neustart des Programmes)</s:String>
+    <s:String x:Key="ConversionsLimitingExplanation">Jede Datei-Konvertierung benötigt etwa einen Kern.
+Haben Sie eine CPU mit vier Kernen und beschränken Sie das Programm auf drei gleichzeitige Konvertierungen, so werden Sie im Task-Manager sehen, dass das Programm ungefähr 75% der CPU benutzt.
+Ich empfehle, einen Kern weniger zu benutzen und dementsprechend eine gleichzeitige Konvetierung weniger einzustellen, als Ihre CPU-Kerne hat.
+Beispiel: Hat Ihre CPU hat vier Kerne, so stellen Sie drei gleichzeitge Konvertierungen ein.</s:String>
+    <s:String x:Key="FileConversion">Konvertierung</s:String>
+    <s:String x:Key="General">Allgemein</s:String>
+    <s:String x:Key="SavePlaylistInUniqueDirectory">Jede Playlist in einem anderen Ordner speichern</s:String>
+    <s:String x:Key="Playlist">Playlist</s:String>
+    <s:String x:Key="OpenDestinationFolder">Zielordner öffnen</s:String>
+    <s:String x:Key="ConfirmExit">Bestätigung beim Beenden der Anwendung</s:String>
+    <s:String x:Key="OpenDestinationFolderOnFinish">Zielordner nach Abschluss öffnen</s:String>
+    <s:String x:Key="TagAudioFile">Tags und Titelbild zu Audiodateien hinzufügen</s:String>
+    <s:String x:Key="Than">als</s:String>
+    <s:String x:Key="Filter">Filter</s:String>
+    <s:String x:Key="DownloadFilter">Nur Videos herunterladen die</s:String>
+    <s:String x:Key="Longer">länger</s:String>
+    <s:String x:Key="Shorter">kürzer</s:String>
+    <s:String x:Key="FileDoesNotExist">{0} existiert nicht.</s:String>
+    <s:String x:Key="Retry">Erneut versuchen</s:String>
+    <s:String x:Key="Of">von</s:String>
+    <s:String x:Key="FileNamePattern">Dateinamensmuster: </s:String>
+    <s:String x:Key="ResetToDefault">Auf Standard zurücksetzen</s:String>
+    <s:String x:Key="FileNamePatternTitle">Dateinamensmuster</s:String>
+    <s:String x:Key="SkipExisting">Dateien überspringen, die bereits vorhanden sind</s:String>
+    <s:String x:Key="FileNamePattenExplanation">Mit dem Dateinamenmuster können Sie mithilfe dieser Parameter dynamische Namen für heruntergeladene Dateien erstellen:
+        
+$title: Titel des Videos
+$index: Index des Videos in der Playlist
+$artist: Name des Künstlers des Songs (falls zutreffend)
+$songtitle: Titel des Songs
+$channel: Name des Kanals, der das Video hochgeladen hat
+$videoid: Eindeutige ID des Videos (aus der Video-URL genommen)
+$playlist: Titel der Playlist
+        
+Zum Beispiel, wenn mein Dateinamenmuster "Song: [$playlist] $artist - $songtitle ($channel) $index" lautet, wäre das Ergebnis "Song: [Beispiel] Infected Mushroom - Spitfire (Monstercat) 1".
+Du kannst beliebigen Text zwischen den Parametern hinzufügen; nur die Parameter werden ersetzt. Beachte jedoch, dass nicht alle Parameter immer verfügbar sind (z. B. ist die $playlist-Variable nicht verfügbar,
+wenn nur ein einzelnes Video heruntergeladen wird). In solchen Fällen werden fehlende Parameter aus dem Dateinamen entfernt.</s:String>
+    <s:String x:Key="CopyToClipboard">In die Zwischenablage kopieren</s:String>
+    <s:String x:Key="SaveToTextFile">Speichern in eine Textdatei</s:String>
+    <s:String x:Key="VideoLanguage">Video Language: </s:String>
+
+    <!-- revamp: new interface strings -->
+    <s:String x:Key="NavDownload">Herunterladen</s:String>
+    <s:String x:Key="NavDownloads">Downloads</s:String>
+    <s:String x:Key="ToggleTheme">Helles/dunkles Design umschalten</s:String>
+    <s:String x:Key="ChangeLanguage">Sprache ändern</s:String>
+    <s:String x:Key="HeroTitle">Was möchtest du herunterladen?</s:String>
+    <s:String x:Key="HeroSubtitle">Kopiere den Link auf YouTube und füge ihn unten ein.</s:String>
+    <s:String x:Key="ClipboardFound">In deiner Zwischenablage ist ein YouTube-Link</s:String>
+    <s:String x:Key="UseThisLink">Diesen Link verwenden</s:String>
+    <s:String x:Key="Dismiss">Ausblenden</s:String>
+    <s:String x:Key="LinkLabel">YouTube-Link</s:String>
+    <s:String x:Key="LinkHelp">Video, Playlist oder Kanal. Für mehrere auf einmal einen Link pro Zeile einfügen.</s:String>
+    <s:String x:Key="LinkPlaceholder">Link hier einfügen — z. B. https://www.youtube.com/playlist?list=…</s:String>
+    <s:String x:Key="Paste">Einfügen</s:String>
+    <s:String x:Key="Clear">Leeren</s:String>
+    <s:String x:Key="FindVideos">Videos suchen</s:String>
+    <s:String x:Key="OrDragLink">oder ziehe einen Link aus dem Browser in dieses Feld</s:String>
+    <s:String x:Key="TypeChannel">Kanal</s:String>
+    <s:String x:Key="TypeMany">Mehrere Links</s:String>
+    <s:String x:Key="TypeManyHint">Ein Link pro Zeile</s:String>
+    <s:String x:Key="DetectedVideo">Video-Link erkannt</s:String>
+    <s:String x:Key="DetectedPlaylist">Playlist-Link erkannt</s:String>
+    <s:String x:Key="DetectedChannel">Kanal-Link erkannt</s:String>
+    <s:String x:Key="DetectedMany">{0} Links erkannt — sie werden zusammen geladen</s:String>
+    <s:String x:Key="NotAYoutubeLink">Das sieht nicht nach einem YouTube-Link aus</s:String>
+    <s:String x:Key="OneLineInvalid">Eine der Zeilen sieht nicht nach einem YouTube-Link aus</s:String>
+    <s:String x:Key="LoadingTitle">Videos werden gesucht…</s:String>
+    <s:String x:Key="LoadingSubtitle">Titel, Videos und Längen werden gelesen</s:String>
+    <s:String x:Key="LoadFailed">Dieser Link konnte nicht geladen werden</s:String>
+    <s:String x:Key="ChangeLink">Link ändern</s:String>
+    <s:String x:Key="VideoFound">Video gefunden</s:String>
+    <s:String x:Key="PlaylistFound">Playlist gefunden</s:String>
+    <s:String x:Key="ChannelFound">Kanal gefunden</s:String>
+    <s:String x:Key="LinksFound">Links gefunden</s:String>
+    <s:String x:Key="LinksCount">{0} Links</s:String>
+    <s:String x:Key="VideosCount">{0} Videos</s:String>
+    <s:String x:Key="OneVideo">1 Video</s:String>
+    <s:String x:Key="AllSelected">Alle ausgewählt</s:String>
+    <s:String x:Key="SelectedOfTotal">{0} von {1} ausgewählt</s:String>
+    <s:String x:Key="FilterAll">Alle</s:String>
+    <s:String x:Key="FilterSelected">Ausgewählt</s:String>
+    <s:String x:Key="FilterExisting">Bereits heruntergeladen</s:String>
+    <s:String x:Key="SearchInList">In der Liste suchen</s:String>
+    <s:String x:Key="GridView">Raster</s:String>
+    <s:String x:Key="ListView">Liste</s:String>
+    <s:String x:Key="AlreadyInFolder">Bereits im Ordner</s:String>
+    <s:String x:Key="NothingFound">Nichts gefunden.</s:String>
+    <s:String x:Key="AudioOnlyMode">Nur Audio</s:String>
+    <s:String x:Key="Quality">Qualität</s:String>
+    <s:String x:Key="Format">Format</s:String>
+    <s:String x:Key="BestQuality">Beste Qualität</s:String>
+    <s:String x:Key="OriginalAudio">Original (ohne Konvertierung)</s:String>
+    <s:String x:Key="OriginalBitrate">Originalqualität</s:String>
+    <s:String x:Key="ChangeFolder">Ändern</s:String>
+    <s:String x:Key="MoreOptions">Weitere Optionen</s:String>
+    <s:String x:Key="ItemsSelected">{0} ausgewählt</s:String>
+    <s:String x:Key="OneItemSelected">1 ausgewählt</s:String>
+    <s:String x:Key="NothingSelected">Nichts ausgewählt</s:String>
+    <s:String x:Key="TotalDuration">{0} insgesamt</s:String>
+    <s:String x:Key="AddedToDownloads">{0} Elemente zu den Downloads hinzugefügt</s:String>
+    <s:String x:Key="OneAddedToDownloads">1 Element zu den Downloads hinzugefügt</s:String>
+    <s:String x:Key="View">Anzeigen</s:String>
+    <s:String x:Key="PauseAll">Alle pausieren</s:String>
+    <s:String x:Key="ResumeAll">Alle fortsetzen</s:String>
+    <s:String x:Key="ClearCompleted">Fertige entfernen</s:String>
+    <s:String x:Key="OpenFolder">Ordner öffnen</s:String>
+    <s:String x:Key="FilterActive">Laufend</s:String>
+    <s:String x:Key="FilterDone">Fertig</s:String>
+    <s:String x:Key="FilterErrors">Mit Fehlern</s:String>
+    <s:String x:Key="SectionActive">Laufend</s:String>
+    <s:String x:Key="SectionDone">Fertig</s:String>
+    <s:String x:Key="StatusQueued">In der Warteschlange</s:String>
+    <s:String x:Key="StatusPaused">Bei {0}% pausiert</s:String>
+    <s:String x:Key="StatusDone">Fertig</s:String>
+    <s:String x:Key="StatusSkipped">War schon vorhanden — übersprungen</s:String>
+    <s:String x:Key="StatusError">Fehlgeschlagen: {0}</s:String>
+    <s:String x:Key="TimeLeft">noch {0}</s:String>
+    <s:String x:Key="Pause">Pausieren</s:String>
+    <s:String x:Key="Resume">Fortsetzen</s:String>
+    <s:String x:Key="Cancel">Abbrechen</s:String>
+    <s:String x:Key="RemoveFromList">Aus der Liste entfernen</s:String>
+    <s:String x:Key="ShowInFolder">Im Ordner anzeigen</s:String>
+    <s:String x:Key="SummaryInProgress">{0} laufend</s:String>
+    <s:String x:Key="SummaryQueued">{0} wartend</s:String>
+    <s:String x:Key="SummaryPaused">{0} pausiert</s:String>
+    <s:String x:Key="SummaryDone">{0} fertig</s:String>
+    <s:String x:Key="SummaryErrors">{0} mit Fehlern</s:String>
+    <s:String x:Key="NoDownloadsTitle">Keine Downloads</s:String>
+    <s:String x:Key="NoDownloadsText">Füge auf der Seite „Herunterladen“ einen Link ein, um zu starten.</s:String>
+    <s:String x:Key="DownloadSomething">Etwas herunterladen</s:String>
+    <s:String x:Key="DownloadsFinished">Downloads abgeschlossen</s:String>
+    <s:String x:Key="FilesSaved">{0} Dateien gespeichert</s:String>
+    <s:String x:Key="OneFileSaved">1 Datei gespeichert</s:String>
+    <s:String x:Key="NoVideoStream">Für dieses Video ist kein Videostream verfügbar</s:String>
+    <s:String x:Key="NoAudioStream">Für dieses Video ist kein Audiostream verfügbar</s:String>
+    <s:String x:Key="ConversionFailed">ffmpeg konnte die Datei nicht verarbeiten</s:String>
+    <s:String x:Key="SecFileNames">Dateinamen</s:String>
+    <s:String x:Key="SecAppearance">Darstellung</s:String>
+    <s:String x:Key="SecAdvanced">Erweitert</s:String>
+    <s:String x:Key="DefaultFolder">Standardordner</s:String>
+    <s:String x:Key="ConcurrentDownloads">Gleichzeitige Downloads</s:String>
+    <s:String x:Key="ConcurrentDownloadsHint">Wie viele Videos gleichzeitig heruntergeladen werden</s:String>
+    <s:String x:Key="SkipExistingHint">Lädt nicht erneut herunter, was schon im Ordner ist</s:String>
+    <s:String x:Key="DetectClipboard">Kopierte Links erkennen</s:String>
+    <s:String x:Key="DetectClipboardHint">Schlägt den Link vor, wenn du etwas von YouTube kopierst</s:String>
+    <s:String x:Key="NotifyWhenDone">Benachrichtigen, wenn fertig</s:String>
+    <s:String x:Key="NotifyWhenDoneHint">Zeigt eine Windows-Benachrichtigung, wenn die App im Hintergrund ist</s:String>
+    <s:String x:Key="NamePattern">Namensmuster</s:String>
+    <s:String x:Key="NamePreview">So wird es aussehen:</s:String>
+    <s:String x:Key="PreferredQuality">Bevorzugte Qualität</s:String>
+    <s:String x:Key="VideoFormat">Videoformat</s:String>
+    <s:String x:Key="AudioTrackLanguage">Sprache der Audiospur</s:String>
+    <s:String x:Key="AudioTrackLanguageHint">Für Videos mit synchronisierten Audiospuren</s:String>
+    <s:String x:Key="DefaultTrack">Standard des Videos</s:String>
+    <s:String x:Key="CaptionsLanguageLabel">Sprache der Untertitel</s:String>
+    <s:String x:Key="AudioFormat">Audioformat</s:String>
+    <s:String x:Key="AudioFormatHint">Wird verwendet, wenn du „Nur Audio“ wählst</s:String>
+    <s:String x:Key="AudioQuality">Audioqualität</s:String>
+    <s:String x:Key="TagsHint">Titel, Künstler, Album und das Vorschaubild als Cover</s:String>
+    <s:String x:Key="ThemeMode">Design</s:String>
+    <s:String x:Key="ThemeSystem">System</s:String>
+    <s:String x:Key="ThemeLight">Hell</s:String>
+    <s:String x:Key="ThemeDark">Dunkel</s:String>
+    <s:String x:Key="LanguageHint">Sprache der Benutzeroberfläche</s:String>
+    <s:String x:Key="LimitConversionsLabel">Gleichzeitige Konvertierungen begrenzen</s:String>
+    <s:String x:Key="LogFile">Fehlerprotokoll</s:String>
+    <s:String x:Key="LogFileHint">Hilfreich beim Melden eines Problems</s:String>
+    <s:String x:Key="OpenLogFolder">Ordner öffnen</s:String>
+    <s:String x:Key="RestoreDefaults">Zurücksetzen</s:String>
+    <s:String x:Key="RestoreDefaultsHint">Standardeinstellungen wiederherstellen</s:String>
+    <s:String x:Key="RestoreDefaultsConfirm">Alle Einstellungen werden auf ihre Standardwerte zurückgesetzt (die Sprache bleibt erhalten). Fortfahren?</s:String>
+    <s:String x:Key="ReportProblem">Problem melden</s:String>
+    <s:String x:Key="VersionFmt">Version {0}</s:String>
+    <s:String x:Key="AboutDisclaimer">Kostenlos und Open Source, basierend auf dem ursprünglichen YouTube Playlist Downloader von shaked6540. Nicht mit YouTube oder Google verbunden. Das Herunterladen von Videos kann gegen die Nutzungsbedingungen von YouTube verstoßen — verantwortungsvoll verwenden.</s:String>
+    <s:String x:Key="ExitWhileDownloading">Es laufen noch {0} Downloads. Wenn du jetzt beendest, werden sie abgebrochen. Trotzdem beenden?</s:String>
+    <s:String x:Key="Ok">OK</s:String>
+    <s:String x:Key="Copied">In die Zwischenablage kopiert</s:String>
+    <s:String x:Key="RateLimited">YouTube blockiert vorübergehend anonyme Anfragen von dieser Verbindung. Versuche es später erneut oder melde dich in den Einstellungen mit deinem YouTube-Konto an.</s:String>
+    <s:String x:Key="NoConnection">YouTube ist nicht erreichbar. Prüfe deine Internetverbindung.</s:String>
+    <s:String x:Key="SignInHint">Mein YouTube-Konto verwenden</s:String>
+    <s:String x:Key="YoutubeAccount">YouTube-Konto</s:String>
+    <s:String x:Key="YoutubeAccountHint">Melde dich an, um die Grenzen zu umgehen, die YouTube für anonyme Nutzung setzt. Die Sitzung bleibt nur auf diesem Computer.</s:String>
+    <s:String x:Key="ImportCookies">cookies.txt importieren</s:String>
+    <s:String x:Key="RemoveCookies">Entfernen</s:String>
+    <s:String x:Key="NoCookies">Nicht angemeldet</s:String>
+    <s:String x:Key="CookiesInvalid">In dieser Datei wurden keine YouTube-Cookies gefunden. Exportiere sie erneut, während du bei youtube.com angemeldet bist.</s:String>
+    <s:String x:Key="ContactHelp">Einen Fehler gefunden oder einen Vorschlag? Öffne ein Issue auf GitHub und beschreibe, was passiert ist (und hänge, wenn möglich, das Fehlerprotokoll aus Einstellungen › Erweitert an). Jedes Issue wird geprüft und behoben.</s:String>
+    <s:String x:Key="SignInWithYoutube">Mit YouTube anmelden</s:String>
+    <s:String x:Key="SignInWindowHint">Melde dich bei deinem Google-Konto an. Dieses Fenster schließt sich danach von selbst.</s:String>
+    <s:String x:Key="SignedIn">Bei YouTube angemeldet</s:String>
+    <s:String x:Key="SignInUnavailable">Das Anmeldefenster konnte nicht geöffnet werden, weil Microsoft Edge WebView2 nicht installiert ist. Verwende stattdessen „cookies.txt-Datei importieren“.</s:String>
+    <s:String x:Key="ImportCookiesInstead">Oder eine cookies.txt-Datei importieren</s:String>
+    <s:String x:Key="FfmpegMissingTitle">Nur noch ein Schritt</s:String>
+    <s:String x:Key="FfmpegMissingMessage">Um Video und Audio zusammenzufügen und Musik umzuwandeln, nutzt die App FFmpeg, ein kostenloses Programm. Es ist noch nicht auf diesem Computer. Jetzt herunterladen? Etwa {0} MB, nur einmal nötig.</s:String>
+    <s:String x:Key="NotNow">Nicht jetzt</s:String>
+    <s:String x:Key="DownloadFfmpeg">Herunterladen</s:String>
+    <s:String x:Key="DownloadingFfmpeg">FFmpeg wird heruntergeladen</s:String>
+    <s:String x:Key="DownloadingFfmpegMessage">Das passiert nur einmal. Dein Download startet, sobald es fertig ist.</s:String>
+    <s:String x:Key="FfmpegDownloadFailed">FFmpeg konnte nicht heruntergeladen werden.</s:String>
+    <s:String x:Key="FfmpegMissingError">FFmpeg fehlt. Starte den Download erneut, dann bietet die App die Installation an.</s:String>
+    <!-- /revamp -->
+</ResourceDictionary> 

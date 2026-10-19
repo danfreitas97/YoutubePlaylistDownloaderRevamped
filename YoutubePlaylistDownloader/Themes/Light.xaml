@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="C.Bg">#FFFFFF</Color>
+    <Color x:Key="C.Red">#E00025</Color>
+    <Color x:Key="C.Shadow">#000000</Color>
+
+    <SolidColorBrush x:Key="Bg" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Text" Color="#0F0F0F" />
+    <SolidColorBrush x:Key="Text2" Color="#606060" />
+    <SolidColorBrush x:Key="Hover" Color="#0A000000" />
+    <SolidColorBrush x:Key="Chip" Color="#0D000000" />
+    <SolidColorBrush x:Key="ChipHover" Color="#1A000000" />
+    <SolidColorBrush x:Key="Line" Color="#1A000000" />
+    <SolidColorBrush x:Key="Line2" Color="#33000000" />
+    <SolidColorBrush x:Key="InvBg" Color="#0F0F0F" />
+    <SolidColorBrush x:Key="InvText" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Menu" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Blue" Color="#065FD4" />
+    <SolidColorBrush x:Key="Red" Color="#E00025" />
+    <SolidColorBrush x:Key="RedSoft" Color="#14E00025" />
+    <SolidColorBrush x:Key="RedTrack" Color="#66E00025" />
+    <SolidColorBrush x:Key="Green" Color="#1E8A32" />
+    <SolidColorBrush x:Key="Overlay" Color="#66000000" />
+    <SolidColorBrush x:Key="Knob" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ShadowRing" Color="#14000000" />
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="ShadowOpacity">0.16</system:Double>
+</ResourceDictionary>
