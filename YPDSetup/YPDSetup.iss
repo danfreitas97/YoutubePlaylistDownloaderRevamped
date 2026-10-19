@@ -26,7 +26,15 @@ UninstallDisplayIcon={app}\YoutubePlaylistDownloader.exe
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 MinVersion=10.0
-WizardStyle=modern
+; Follows the Windows light/dark setting, like the app.
+WizardStyle=modern dynamic
+WizardImageFile=wizard-image-100.png,wizard-image-150.png,wizard-image-200.png
+WizardSmallImageFile=wizard-small-100.png,wizard-small-150.png,wizard-small-200.png
+; Dark mode has its own image directives; without them it falls back to the built-in pictures.
+WizardImageFileDynamicDark=wizard-image-100.png,wizard-image-150.png,wizard-image-200.png
+WizardSmallImageFileDynamicDark=wizard-small-100.png,wizard-small-150.png,wizard-small-200.png
+; Ask for the language only when Windows uses one the installer does not have.
+ShowLanguageDialog=auto
 ; Close a running copy before replacing its files.
 CloseApplications=yes
 
