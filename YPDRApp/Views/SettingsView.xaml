@@ -140,6 +140,8 @@
                         <Border Style="{StaticResource RowFirst}">
                             <DockPanel>
                                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Style="{StaticResource Btn.GhostSm}" Content="{DynamicResource RefreshCookies}" Command="{Binding RefreshCookiesCommand}"
+                                            Visibility="{Binding HasCookies, Converter={StaticResource Visible}}" Margin="0,0,6,0" />
                                     <Button Style="{StaticResource Btn.GhostSm}" Content="{DynamicResource RemoveCookies}" Command="{Binding RemoveCookiesCommand}"
                                             Visibility="{Binding HasCookies, Converter={StaticResource Visible}}" Margin="0,0,6,0" />
                                     <Button Style="{StaticResource Btn.RedSm}" c:Ui.Icon="{StaticResource I.User}" Content="{DynamicResource SignInWithYoutube}" Command="{Binding SignInCommand}"

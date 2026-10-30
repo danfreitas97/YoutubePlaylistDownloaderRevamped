@@ -12,6 +12,7 @@ public partial class App : Application
         base.OnStartup(e);
         GlobalConsts.LoadConsts();
         GlobalConsts.CreateTempFolder();
+        YoutubeCookies.DeletePendingProfile();
         ThemeService.Initialize();
         Loc.Initialize();
 

@@ -321,5 +321,11 @@ Bütün parametrelerin her zaman geçerli olamayabileceği dikkate alınmalıdı
     <s:String x:Key="DownloadingFfmpegMessage">Bu yalnızca bir kez olur. İndirmen bittiği anda başlar.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">FFmpeg indirilemedi.</s:String>
     <s:String x:Key="FfmpegMissingError">FFmpeg eksik. İndirmeyi yeniden başlat, uygulama kurmayı önerecek.</s:String>
+    <s:String x:Key="RetryFailed">Başarısızları yeniden dene</s:String>
+    <s:String x:Key="RefreshCookies">Çerezleri yenile</s:String>
+    <s:String x:Key="CookiesRefreshed">Çerezler yenilendi</s:String>
+    <s:String x:Key="CookiesRefreshImported">Dosyadan içe aktarılan çerezleri uygulama yenileyemez. Kendiliğinden yenilenmeleri için hesabınla giriş yap.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">YouTube oturumun sona erdi. Hesabınla yeniden giriş yap.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Çerezler şu anda yenilenemedi. Daha sonra yeniden dene.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

@@ -253,6 +253,7 @@ public partial class MainViewModel : ObservableObject
     public async Task OnStartedAsync()
     {
         Download.CheckClipboard();
+        CookieRefresher.Start();
 
         if (GlobalConsts.settings.CheckForProgramUpdates)
             await CheckForUpdatesAsync(silent: true);

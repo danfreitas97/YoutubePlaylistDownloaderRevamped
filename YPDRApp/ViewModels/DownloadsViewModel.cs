@@ -34,6 +34,7 @@ public partial class DownloadsViewModel : ObservableObject
     [ObservableProperty] private bool hasFinished;
     [ObservableProperty] private bool hasPausable;
     [ObservableProperty] private bool hasResumable;
+    [ObservableProperty] private bool hasErrors;
 
     partial void OnFilterChanged(string value)
     {
@@ -72,6 +73,7 @@ public partial class DownloadsViewModel : ObservableObject
         HasFinished = items.Any(x => x.IsFinished);
         HasPausable = items.Any(x => x.CanPause);
         HasResumable = !HasPausable && items.Any(x => x.CanResume);
+        HasErrors = items.Any(x => x.IsError);
     }
 
     [RelayCommand]
@@ -94,6 +96,9 @@ public partial class DownloadsViewModel : ObservableObject
 
     [RelayCommand]
     private void ResumeAll() => DownloadQueue.Instance.ResumeAll();
+
+    [RelayCommand]
+    private void RetryFailed() => DownloadQueue.Instance.RetryFailed();
 
     [RelayCommand]
     private void ClearFinished() => DownloadQueue.Instance.ClearFinished();

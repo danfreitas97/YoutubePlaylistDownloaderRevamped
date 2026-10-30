@@ -320,5 +320,11 @@ $playlist: 播放列表的名称
     <s:String x:Key="DownloadingFfmpegMessage">只需要这一次。完成后会立即开始你的下载。</s:String>
     <s:String x:Key="FfmpegDownloadFailed">无法下载 FFmpeg。</s:String>
     <s:String x:Key="FfmpegMissingError">缺少 FFmpeg。重新开始下载，应用会提示你安装。</s:String>
+    <s:String x:Key="RetryFailed">重试失败的项目</s:String>
+    <s:String x:Key="RefreshCookies">更新 Cookie</s:String>
+    <s:String x:Key="CookiesRefreshed">Cookie 已更新</s:String>
+    <s:String x:Key="CookiesRefreshImported">应用无法更新从文件导入的 Cookie。请用你的账号登录，Cookie 会自动更新。</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">你的 YouTube 会话已结束。请重新用你的账号登录。</s:String>
+    <s:String x:Key="CookiesRefreshFailed">现在无法更新 Cookie，请稍后再试。</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

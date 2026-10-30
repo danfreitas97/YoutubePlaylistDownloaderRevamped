@@ -297,6 +297,27 @@ public partial class SettingsViewModel : ObservableObject
     }
 
     [RelayCommand]
+    private async Task RefreshCookies()
+    {
+        var result = await CookieRefresher.RefreshAsync();
+        if (result == CookieRefreshResult.Superseded)
+            return;
+        if (result == CookieRefreshResult.Refreshed)
+        {
+            main.ShowSnack(Loc.Get("CookiesRefreshed"));
+            return;
+        }
+
+        var message = result switch
+        {
+            CookieRefreshResult.Imported => "CookiesRefreshImported",
+            CookieRefreshResult.SignedOut => "CookiesRefreshSignedOut",
+            _ => "CookiesRefreshFailed"
+        };
+        await main.Dialog.ShowMessageAsync(Loc.Get("Error"), Loc.Get(message));
+    }
+
+    [RelayCommand]
     private void RemoveCookies()
     {
         YoutubeCookies.Clear();

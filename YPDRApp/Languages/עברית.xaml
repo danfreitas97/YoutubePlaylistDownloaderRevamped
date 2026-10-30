@@ -319,5 +319,11 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="DownloadingFfmpegMessage">זה קורה רק פעם אחת. ההורדה שלכם תתחיל מיד בסיום.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">לא ניתן היה להוריד את FFmpeg.</s:String>
     <s:String x:Key="FfmpegMissingError">FFmpeg חסר. התחילו את ההורדה מחדש והאפליקציה תציע להתקין אותו.</s:String>
+    <s:String x:Key="RetryFailed">ניסיון חוזר לכושלים</s:String>
+    <s:String x:Key="RefreshCookies">חידוש קובצי Cookie</s:String>
+    <s:String x:Key="CookiesRefreshed">קובצי ה-Cookie חודשו</s:String>
+    <s:String x:Key="CookiesRefreshImported">האפליקציה לא יכולה לחדש קובצי Cookie שיובאו מקובץ. התחברו עם החשבון שלכם כדי שיתחדשו מעצמם.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">החיבור שלכם ל-YouTube הסתיים. התחברו שוב עם החשבון שלכם.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">לא ניתן היה לחדש את קובצי ה-Cookie כרגע. נסו שוב מאוחר יותר.</s:String>
     <!-- /revamp -->
 </ResourceDictionary>

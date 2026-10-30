@@ -321,5 +321,11 @@ Należy pamiętać, że nie wszystkie parametry są zawsze dostępne (na przykł
     <s:String x:Key="DownloadingFfmpegMessage">To dzieje się tylko raz. Pobieranie ruszy, gdy tylko się skończy.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">Nie udało się pobrać FFmpeg.</s:String>
     <s:String x:Key="FfmpegMissingError">Brakuje FFmpeg. Uruchom pobieranie ponownie, a aplikacja zaproponuje instalację.</s:String>
+    <s:String x:Key="RetryFailed">Ponów nieudane</s:String>
+    <s:String x:Key="RefreshCookies">Odnów pliki cookie</s:String>
+    <s:String x:Key="CookiesRefreshed">Pliki cookie odnowione</s:String>
+    <s:String x:Key="CookiesRefreshImported">Aplikacja nie może odnowić plików cookie zaimportowanych z pliku. Zaloguj się na swoje konto, aby odnawiały się same.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">Twoja sesja YouTube wygasła. Zaloguj się ponownie na swoje konto.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Nie udało się teraz odnowić plików cookie. Spróbuj ponownie później.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

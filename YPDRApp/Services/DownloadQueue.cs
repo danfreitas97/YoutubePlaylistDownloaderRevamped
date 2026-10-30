@@ -92,6 +92,14 @@ public sealed class DownloadQueue
         Pump();
     }
 
+    public void RetryFailed()
+    {
+        foreach (var item in Items.Where(x => x.IsError).ToList())
+            item.Retry();
+
+        Pump();
+    }
+
     public void ClearFinished()
     {
         foreach (var item in Items.Where(x => x.IsFinished).ToList())

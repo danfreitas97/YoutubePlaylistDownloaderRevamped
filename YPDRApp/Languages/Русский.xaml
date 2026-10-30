@@ -320,5 +320,11 @@ $playlist: Название плейлиста
     <s:String x:Key="DownloadingFfmpegMessage">Это нужно только один раз. Ваша загрузка начнётся сразу после этого.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">Не удалось скачать FFmpeg.</s:String>
     <s:String x:Key="FfmpegMissingError">FFmpeg не установлен. Запустите загрузку снова, и приложение предложит установить его.</s:String>
+    <s:String x:Key="RetryFailed">Повторить неудачные</s:String>
+    <s:String x:Key="RefreshCookies">Обновить cookie</s:String>
+    <s:String x:Key="CookiesRefreshed">Cookie обновлены</s:String>
+    <s:String x:Key="CookiesRefreshImported">Приложение не может обновлять cookie, импортированные из файла. Войдите в свой аккаунт, чтобы они обновлялись сами.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">Сеанс YouTube завершился. Войдите в свой аккаунт снова.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Сейчас не удалось обновить cookie. Попробуйте позже.</s:String>
     <!-- /revamp -->
 </ResourceDictionary>

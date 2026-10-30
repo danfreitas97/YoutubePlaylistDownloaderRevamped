@@ -319,5 +319,11 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="DownloadingFfmpegMessage">يحدث هذا مرة واحدة فقط. سيبدأ التنزيل فور الانتهاء.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">تعذّر تنزيل FFmpeg.</s:String>
     <s:String x:Key="FfmpegMissingError">برنامج FFmpeg غير موجود. ابدأ التنزيل من جديد وسيعرض التطبيق تثبيته.</s:String>
+    <s:String x:Key="RetryFailed">إعادة محاولة الفاشلة</s:String>
+    <s:String x:Key="RefreshCookies">تجديد ملفات تعريف الارتباط</s:String>
+    <s:String x:Key="CookiesRefreshed">تم تجديد ملفات تعريف الارتباط</s:String>
+    <s:String x:Key="CookiesRefreshImported">لا يستطيع التطبيق تجديد ملفات تعريف الارتباط المستوردة من ملف. سجّل الدخول بحسابك لتتجدد تلقائيًا.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">انتهت جلستك في YouTube. سجّل الدخول بحسابك مرة أخرى.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">تعذّر تجديد ملفات تعريف الارتباط الآن. حاول مرة أخرى لاحقًا.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

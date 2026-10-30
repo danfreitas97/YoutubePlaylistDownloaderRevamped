@@ -324,5 +324,11 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="DownloadingFfmpegMessage">This only happens once. Your download starts as soon as it finishes.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">Couldn&apos;t download FFmpeg.</s:String>
     <s:String x:Key="FfmpegMissingError">FFmpeg is missing. Start the download again and the app will offer to install it.</s:String>
+    <s:String x:Key="RetryFailed">Retry failed</s:String>
+    <s:String x:Key="RefreshCookies">Refresh cookies</s:String>
+    <s:String x:Key="CookiesRefreshed">Cookies refreshed</s:String>
+    <s:String x:Key="CookiesRefreshImported">Cookies imported from a file can't be refreshed by the app. Sign in with your account so they renew on their own.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">Your YouTube session has ended. Sign in with your account again.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Couldn't refresh the cookies right now. Try again later.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

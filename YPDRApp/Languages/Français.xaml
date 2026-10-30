@@ -318,5 +318,11 @@ redémarrage du programme pour prendre effet)</s:String>
     <s:String x:Key="DownloadingFfmpegMessage">Cela n’arrive qu’une fois. Votre téléchargement commence dès que c’est terminé.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">Impossible de télécharger FFmpeg.</s:String>
     <s:String x:Key="FfmpegMissingError">FFmpeg est manquant. Relancez le téléchargement et l’app proposera de l’installer.</s:String>
+    <s:String x:Key="RetryFailed">Réessayer les échecs</s:String>
+    <s:String x:Key="RefreshCookies">Renouveler les cookies</s:String>
+    <s:String x:Key="CookiesRefreshed">Cookies renouvelés</s:String>
+    <s:String x:Key="CookiesRefreshImported">L’app ne peut pas renouveler des cookies importés depuis un fichier. Connectez-vous avec votre compte pour qu’ils se renouvellent tout seuls.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">Votre session YouTube a expiré. Reconnectez-vous avec votre compte.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Impossible de renouveler les cookies pour le moment. Réessayez plus tard.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

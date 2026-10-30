@@ -319,5 +319,11 @@ wenn nur ein einzelnes Video heruntergeladen wird). In solchen Fällen werden fe
     <s:String x:Key="DownloadingFfmpegMessage">Das passiert nur einmal. Dein Download startet, sobald es fertig ist.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">FFmpeg konnte nicht heruntergeladen werden.</s:String>
     <s:String x:Key="FfmpegMissingError">FFmpeg fehlt. Starte den Download erneut, dann bietet die App die Installation an.</s:String>
+    <s:String x:Key="RetryFailed">Fehlgeschlagene wiederholen</s:String>
+    <s:String x:Key="RefreshCookies">Cookies erneuern</s:String>
+    <s:String x:Key="CookiesRefreshed">Cookies erneuert</s:String>
+    <s:String x:Key="CookiesRefreshImported">Aus einer Datei importierte Cookies kann die App nicht erneuern. Melde dich mit deinem Konto an, damit sie sich selbst erneuern.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">Deine YouTube-Sitzung ist abgelaufen. Melde dich erneut mit deinem Konto an.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Die Cookies konnten gerade nicht erneuert werden. Versuche es später noch einmal.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

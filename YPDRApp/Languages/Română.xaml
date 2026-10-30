@@ -315,5 +315,11 @@ Puteți adăuga orice text între parametri, doar parametrii vor fi înlocuiți.
     <s:String x:Key="DownloadingFfmpegMessage">Se întâmplă o singură dată. Descărcarea ta începe imediat ce se termină.</s:String>
     <s:String x:Key="FfmpegDownloadFailed">FFmpeg nu a putut fi descărcat.</s:String>
     <s:String x:Key="FfmpegMissingError">Lipsește FFmpeg. Pornește din nou descărcarea și aplicația îți va oferi instalarea.</s:String>
+    <s:String x:Key="RetryFailed">Reîncearcă eșuatele</s:String>
+    <s:String x:Key="RefreshCookies">Reînnoiește cookie-urile</s:String>
+    <s:String x:Key="CookiesRefreshed">Cookie-uri reînnoite</s:String>
+    <s:String x:Key="CookiesRefreshImported">Aplicația nu poate reînnoi cookie-urile importate dintr-un fișier. Conectează-te cu contul tău ca să se reînnoiască singure.</s:String>
+    <s:String x:Key="CookiesRefreshSignedOut">Sesiunea ta YouTube a expirat. Conectează-te din nou cu contul tău.</s:String>
+    <s:String x:Key="CookiesRefreshFailed">Cookie-urile nu au putut fi reînnoite acum. Încearcă din nou mai târziu.</s:String>
     <!-- /revamp -->
 </ResourceDictionary> 

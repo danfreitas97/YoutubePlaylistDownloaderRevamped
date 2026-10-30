@@ -126,6 +126,8 @@
                         Command="{Binding PauseAllCommand}" Visibility="{Binding HasPausable, Converter={StaticResource Visible}}" />
                 <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Play}" Content="{DynamicResource ResumeAll}" Margin="8,4,0,0"
                         Command="{Binding ResumeAllCommand}" Visibility="{Binding HasResumable, Converter={StaticResource Visible}}" />
+                <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Retry}" Content="{DynamicResource RetryFailed}" Margin="8,4,0,0"
+                        Command="{Binding RetryFailedCommand}" Visibility="{Binding HasErrors, Converter={StaticResource Visible}}" />
                 <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Check}" Content="{DynamicResource ClearCompleted}" Margin="8,4,0,0"
                         Command="{Binding ClearFinishedCommand}" Visibility="{Binding HasFinished, Converter={StaticResource Visible}}" />
                 <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Folder}" Content="{DynamicResource OpenFolder}" Margin="8,4,0,0"

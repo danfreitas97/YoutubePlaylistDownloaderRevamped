@@ -200,8 +200,19 @@ public partial class DownloadItem : ObservableObject
             workingDirectory = Path.Combine(SaveDirectory, $".ypdr-{Guid.NewGuid():N}");
             Directory.CreateDirectory(workingDirectory);
 
+            var signedIn = client == null && YoutubeCookies.HasCookies;
             client ??= GlobalConsts.YoutubeClient;
-            var manifest = await client.Videos.Streams.GetManifestAsync(Video.Id, token).ConfigureAwait(false);
+            StreamManifest manifest;
+            try
+            {
+                manifest = await client.Videos.Streams.GetManifestAsync(Video.Id, token).ConfigureAwait(false);
+            }
+            catch (HttpRequestException ex) when (signedIn && ex.StatusCode == System.Net.HttpStatusCode.BadRequest)
+            {
+                // YouTube answers some signed-in player requests with 400 while the same request works anonymously.
+                client = new YoutubeClient();
+                manifest = await client.Videos.Streams.GetManifestAsync(Video.Id, token).ConfigureAwait(false);
+            }
             var baseName = FileBaseName(Video);
             var tempBase = Path.Combine(workingDirectory, "media");
 
