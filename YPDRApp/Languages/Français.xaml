@@ -179,7 +179,6 @@ redémarrage du programme pour prendre effet)</s:String>
     <s:String x:Key="LoadingTitle">Recherche des vidéos…</s:String>
     <s:String x:Key="LoadingSubtitle">Lecture des titres, vidéos et durées</s:String>
     <s:String x:Key="LoadFailed">Impossible de charger ce lien</s:String>
-    <s:String x:Key="ChangeLink">Changer de lien</s:String>
     <s:String x:Key="VideoFound">Vidéo trouvée</s:String>
     <s:String x:Key="PlaylistFound">Playlist trouvée</s:String>
     <s:String x:Key="ChannelFound">Chaîne trouvée</s:String>
@@ -309,6 +308,8 @@ redémarrage du programme pour prendre effet)</s:String>
     <s:String x:Key="LibraryRefresh">Actualiser</s:String>
     <s:String x:Key="LibrarySignInTitle">Téléchargez vos titres aimés et vos playlists</s:String>
     <s:String x:Key="LibrarySignInHint">Connectez-vous avec votre compte YouTube pour les voir ici.</s:String>
+    <s:String x:Key="LibraryShowAll">Tout afficher ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Afficher moins</s:String>
     <s:String x:Key="FfmpegMissingTitle">Plus qu’une étape</s:String>
     <s:String x:Key="FfmpegMissingMessage">Pour assembler la vidéo et l’audio et convertir la musique, l’app utilise FFmpeg, un programme gratuit. Il n’est pas encore sur cet ordinateur. Le télécharger maintenant ? Environ {0} Mo, une seule fois.</s:String>
     <s:String x:Key="NotNow">Pas maintenant</s:String>

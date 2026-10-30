@@ -182,7 +182,6 @@ Należy pamiętać, że nie wszystkie parametry są zawsze dostępne (na przykł
     <s:String x:Key="LoadingTitle">Wyszukiwanie filmów…</s:String>
     <s:String x:Key="LoadingSubtitle">Odczytywanie tytułów, filmów i czasu trwania</s:String>
     <s:String x:Key="LoadFailed">Nie udało się wczytać tego linku</s:String>
-    <s:String x:Key="ChangeLink">Zmień link</s:String>
     <s:String x:Key="VideoFound">Znaleziono film</s:String>
     <s:String x:Key="PlaylistFound">Znaleziono playlistę</s:String>
     <s:String x:Key="ChannelFound">Znaleziono kanał</s:String>
@@ -312,6 +311,8 @@ Należy pamiętać, że nie wszystkie parametry są zawsze dostępne (na przykł
     <s:String x:Key="LibraryRefresh">Odśwież</s:String>
     <s:String x:Key="LibrarySignInTitle">Pobierz polubioną muzykę i playlisty</s:String>
     <s:String x:Key="LibrarySignInHint">Zaloguj się na konto YouTube, aby zobaczyć je tutaj.</s:String>
+    <s:String x:Key="LibraryShowAll">Pokaż wszystkie ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Pokaż mniej</s:String>
     <s:String x:Key="FfmpegMissingTitle">Jeszcze tylko jeden krok</s:String>
     <s:String x:Key="FfmpegMissingMessage">Do łączenia obrazu z dźwiękiem i konwersji muzyki aplikacja używa FFmpeg, darmowego programu. Nie ma go jeszcze na tym komputerze. Pobrać teraz? Około {0} MB, tylko raz.</s:String>
     <s:String x:Key="NotNow">Nie teraz</s:String>

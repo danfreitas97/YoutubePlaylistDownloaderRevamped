@@ -182,7 +182,6 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LoadingTitle">Looking up the videos…</s:String>
     <s:String x:Key="LoadingSubtitle">Reading titles, videos and durations</s:String>
     <s:String x:Key="LoadFailed">Couldn&apos;t load this link</s:String>
-    <s:String x:Key="ChangeLink">Change link</s:String>
     <s:String x:Key="VideoFound">Video found</s:String>
     <s:String x:Key="PlaylistFound">Playlist found</s:String>
     <s:String x:Key="ChannelFound">Channel found</s:String>
@@ -315,6 +314,8 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LibraryRefresh">Refresh</s:String>
     <s:String x:Key="LibrarySignInTitle">Download your liked music and playlists</s:String>
     <s:String x:Key="LibrarySignInHint">Sign in with your YouTube account to see them here.</s:String>
+    <s:String x:Key="LibraryShowAll">Show all ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Show less</s:String>
     <s:String x:Key="FfmpegMissingTitle">One more step</s:String>
     <s:String x:Key="FfmpegMissingMessage">To join video and audio and to convert music, the app uses FFmpeg, a free program. It isn&apos;t on this computer yet. Download it now? It&apos;s about {0} MB and only needed once.</s:String>
     <s:String x:Key="NotNow">Not now</s:String>

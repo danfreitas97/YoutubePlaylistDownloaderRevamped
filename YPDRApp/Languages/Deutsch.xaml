@@ -180,7 +180,6 @@ wenn nur ein einzelnes Video heruntergeladen wird). In solchen Fällen werden fe
     <s:String x:Key="LoadingTitle">Videos werden gesucht…</s:String>
     <s:String x:Key="LoadingSubtitle">Titel, Videos und Längen werden gelesen</s:String>
     <s:String x:Key="LoadFailed">Dieser Link konnte nicht geladen werden</s:String>
-    <s:String x:Key="ChangeLink">Link ändern</s:String>
     <s:String x:Key="VideoFound">Video gefunden</s:String>
     <s:String x:Key="PlaylistFound">Playlist gefunden</s:String>
     <s:String x:Key="ChannelFound">Kanal gefunden</s:String>
@@ -310,6 +309,8 @@ wenn nur ein einzelnes Video heruntergeladen wird). In solchen Fällen werden fe
     <s:String x:Key="LibraryRefresh">Aktualisieren</s:String>
     <s:String x:Key="LibrarySignInTitle">Lade deine Lieblingsmusik und Playlists herunter</s:String>
     <s:String x:Key="LibrarySignInHint">Melde dich mit deinem YouTube-Konto an, um sie hier zu sehen.</s:String>
+    <s:String x:Key="LibraryShowAll">Alle anzeigen ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Weniger anzeigen</s:String>
     <s:String x:Key="FfmpegMissingTitle">Nur noch ein Schritt</s:String>
     <s:String x:Key="FfmpegMissingMessage">Um Video und Audio zusammenzufügen und Musik umzuwandeln, nutzt die App FFmpeg, ein kostenloses Programm. Es ist noch nicht auf diesem Computer. Jetzt herunterladen? Etwa {0} MB, nur einmal nötig.</s:String>
     <s:String x:Key="NotNow">Nicht jetzt</s:String>

@@ -10,6 +10,38 @@ public partial class DownloadView : UserControl
             if (IsVisible && ViewModel?.IsEmpty == true)
                 Dispatcher.BeginInvoke(() => LinkBox.Focus(), DispatcherPriority.Input);
         };
+
+        // The usual "back" gestures leave a loaded list for the link field, like the Back button.
+        // They're watched on the window because focus may be anywhere after the list loads.
+        Loaded += (s, e) =>
+        {
+            var window = Window.GetWindow(this);
+            if (window == null || backGesturesHooked)
+                return;
+
+            backGesturesHooked = true;
+            window.PreviewMouseUp += (s, e) =>
+            {
+                if (e.ChangedButton == MouseButton.XButton1 && GoBack())
+                    e.Handled = true;
+            };
+            window.PreviewKeyDown += (s, e) =>
+            {
+                if (e.Key == Key.System && e.SystemKey == Key.Left && GoBack())
+                    e.Handled = true;
+            };
+        };
+    }
+
+    private bool backGesturesHooked;
+
+    private bool GoBack()
+    {
+        if (!IsVisible || ViewModel?.IsLoaded != true)
+            return false;
+
+        ViewModel.ChangeLinkCommand.Execute(null);
+        return true;
     }
 
     private DownloadViewModel ViewModel => DataContext as DownloadViewModel;

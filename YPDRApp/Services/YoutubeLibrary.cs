@@ -13,8 +13,12 @@ public class LibraryPlaylist
     /// <summary>Number of videos, when YouTube shows it.</summary>
     public int? Count { get; init; }
 
-    public string CountText => Count is int count ? count == 1 ? Loc.Get("OneVideo") : Loc.Format("VideosCount", count) : null;
     public bool IsLikedMusic => Id == YoutubeLibrary.LikedMusicId;
+
+    /// <summary>Second line of the row: the video count, or where liked music comes from.</summary>
+    public string Subtitle => Count is int count
+        ? count == 1 ? Loc.Get("OneVideo") : Loc.Format("VideosCount", count.ToString("N0"))
+        : IsLikedMusic ? "YouTube Music" : null;
     public string Link => $"https://www.youtube.com/playlist?list={Id}";
 }
 

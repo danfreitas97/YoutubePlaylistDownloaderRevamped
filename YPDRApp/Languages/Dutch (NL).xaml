@@ -178,7 +178,6 @@ Let er aub op dat niet alle parameters altijd beschikbaar zijn (bijvoorbeeld, in
     <s:String x:Key="LoadingTitle">Video&apos;s zoeken…</s:String>
     <s:String x:Key="LoadingSubtitle">Titels, video&apos;s en duur worden gelezen</s:String>
     <s:String x:Key="LoadFailed">Deze link kon niet worden geladen</s:String>
-    <s:String x:Key="ChangeLink">Link wijzigen</s:String>
     <s:String x:Key="VideoFound">Video gevonden</s:String>
     <s:String x:Key="PlaylistFound">Afspeellijst gevonden</s:String>
     <s:String x:Key="ChannelFound">Kanaal gevonden</s:String>
@@ -308,6 +307,8 @@ Let er aub op dat niet alle parameters altijd beschikbaar zijn (bijvoorbeeld, in
     <s:String x:Key="LibraryRefresh">Vernieuwen</s:String>
     <s:String x:Key="LibrarySignInTitle">Download je gelikete muziek en playlists</s:String>
     <s:String x:Key="LibrarySignInHint">Log in met je YouTube-account om ze hier te zien.</s:String>
+    <s:String x:Key="LibraryShowAll">Alles tonen ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Minder tonen</s:String>
     <s:String x:Key="FfmpegMissingTitle">Nog één stap</s:String>
     <s:String x:Key="FfmpegMissingMessage">Om video en audio samen te voegen en muziek te converteren gebruikt de app FFmpeg, een gratis programma. Het staat nog niet op deze computer. Nu downloaden? Ongeveer {0} MB, maar één keer nodig.</s:String>
     <s:String x:Key="NotNow">Niet nu</s:String>

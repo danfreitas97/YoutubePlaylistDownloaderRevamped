@@ -45,12 +45,29 @@ public partial class DownloadViewModel : ObservableObject
 
     private CancellationTokenSource libraryCts;
 
+    // Collapsed, the library shows this many playlists so it doesn't push the rest of the screen away.
+    private const int CollapsedLibraryCount = 8;
+
     /// <summary>Liked music and the playlists of the signed-in account, shown under the link field.</summary>
-    [ObservableProperty] private IReadOnlyList<LibraryPlaylist> library = [];
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(VisibleLibrary), nameof(CanExpandLibrary), nameof(LibraryToggleText))]
+    private IReadOnlyList<LibraryPlaylist> library = [];
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(VisibleLibrary), nameof(LibraryToggleText))]
+    private bool isLibraryExpanded;
+
     [ObservableProperty] private bool isLibraryLoading;
     [ObservableProperty] private string libraryError;
 
     public bool IsSignedIn => YoutubeCookies.HasCookies;
+
+    public IReadOnlyList<LibraryPlaylist> VisibleLibrary => IsLibraryExpanded ? Library : Library.Take(CollapsedLibraryCount).ToList();
+    public bool CanExpandLibrary => Library.Count > CollapsedLibraryCount;
+    public string LibraryToggleText => IsLibraryExpanded ? Loc.Get("LibraryShowLess") : Loc.Format("LibraryShowAll", Library.Count);
+
+    [RelayCommand]
+    private void ToggleLibrary() => IsLibraryExpanded = !IsLibraryExpanded;
 
     [RelayCommand]
     private Task RefreshLibrary() => LoadLibraryAsync();

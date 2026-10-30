@@ -182,7 +182,6 @@ Bütün parametrelerin her zaman geçerli olamayabileceği dikkate alınmalıdı
     <s:String x:Key="LoadingTitle">Videolar aranıyor…</s:String>
     <s:String x:Key="LoadingSubtitle">Başlıklar, videolar ve süreler okunuyor</s:String>
     <s:String x:Key="LoadFailed">Bu bağlantı yüklenemedi</s:String>
-    <s:String x:Key="ChangeLink">Bağlantıyı değiştir</s:String>
     <s:String x:Key="VideoFound">Video bulundu</s:String>
     <s:String x:Key="PlaylistFound">Oynatma listesi bulundu</s:String>
     <s:String x:Key="ChannelFound">Kanal bulundu</s:String>
@@ -312,6 +311,8 @@ Bütün parametrelerin her zaman geçerli olamayabileceği dikkate alınmalıdı
     <s:String x:Key="LibraryRefresh">Yenile</s:String>
     <s:String x:Key="LibrarySignInTitle">Beğendiğin müzikleri ve oynatma listelerini indir</s:String>
     <s:String x:Key="LibrarySignInHint">Burada görmek için YouTube hesabınla oturum aç.</s:String>
+    <s:String x:Key="LibraryShowAll">Tümünü göster ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Daha az göster</s:String>
     <s:String x:Key="FfmpegMissingTitle">Son bir adım</s:String>
     <s:String x:Key="FfmpegMissingMessage">Video ile sesi birleştirmek ve müzik dönüştürmek için uygulama ücretsiz bir program olan FFmpeg&apos;i kullanır. Bu bilgisayarda henüz yok. Şimdi indirilsin mi? Yaklaşık {0} MB, yalnızca bir kez gerekir.</s:String>
     <s:String x:Key="NotNow">Şimdi değil</s:String>

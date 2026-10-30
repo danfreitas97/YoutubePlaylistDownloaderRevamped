@@ -180,7 +180,6 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LoadingTitle">جارٍ البحث عن الفيديوهات…</s:String>
     <s:String x:Key="LoadingSubtitle">جارٍ قراءة العناوين والفيديوهات والمدد</s:String>
     <s:String x:Key="LoadFailed">تعذّر تحميل هذا الرابط</s:String>
-    <s:String x:Key="ChangeLink">تغيير الرابط</s:String>
     <s:String x:Key="VideoFound">تم العثور على الفيديو</s:String>
     <s:String x:Key="PlaylistFound">تم العثور على قائمة التشغيل</s:String>
     <s:String x:Key="ChannelFound">تم العثور على القناة</s:String>
@@ -310,6 +309,8 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LibraryRefresh">تحديث</s:String>
     <s:String x:Key="LibrarySignInTitle">نزّل الموسيقى التي أعجبتك وقوائم التشغيل</s:String>
     <s:String x:Key="LibrarySignInHint">سجّل الدخول بحساب YouTube لعرضها هنا.</s:String>
+    <s:String x:Key="LibraryShowAll">عرض الكل ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">عرض أقل</s:String>
     <s:String x:Key="FfmpegMissingTitle">خطوة واحدة متبقية</s:String>
     <s:String x:Key="FfmpegMissingMessage">لدمج الفيديو والصوت وتحويل الموسيقى، يستخدم التطبيق برنامج FFmpeg المجاني. البرنامج غير موجود على هذا الكمبيوتر بعد. هل تريد تنزيله الآن؟ حجمه نحو {0} ميغابايت ويلزم مرة واحدة فقط.</s:String>
     <s:String x:Key="NotNow">ليس الآن</s:String>

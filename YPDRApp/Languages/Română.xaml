@@ -176,7 +176,6 @@ Puteți adăuga orice text între parametri, doar parametrii vor fi înlocuiți.
     <s:String x:Key="LoadingTitle">Se caută videoclipurile…</s:String>
     <s:String x:Key="LoadingSubtitle">Se citesc titlurile, videoclipurile și duratele</s:String>
     <s:String x:Key="LoadFailed">Linkul nu a putut fi încărcat</s:String>
-    <s:String x:Key="ChangeLink">Schimbă linkul</s:String>
     <s:String x:Key="VideoFound">Videoclip găsit</s:String>
     <s:String x:Key="PlaylistFound">Playlist găsit</s:String>
     <s:String x:Key="ChannelFound">Canal găsit</s:String>
@@ -306,6 +305,8 @@ Puteți adăuga orice text între parametri, doar parametrii vor fi înlocuiți.
     <s:String x:Key="LibraryRefresh">Reîmprospătează</s:String>
     <s:String x:Key="LibrarySignInTitle">Descarcă muzica apreciată și playlisturile tale</s:String>
     <s:String x:Key="LibrarySignInHint">Conectează-te cu contul YouTube pentru a le vedea aici.</s:String>
+    <s:String x:Key="LibraryShowAll">Arată toate ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Arată mai puține</s:String>
     <s:String x:Key="FfmpegMissingTitle">Mai e un singur pas</s:String>
     <s:String x:Key="FfmpegMissingMessage">Pentru a uni video și audio și a converti muzica, aplicația folosește FFmpeg, un program gratuit. Nu este încă pe acest computer. Îl descarci acum? Aproximativ {0} MB, o singură dată.</s:String>
     <s:String x:Key="NotNow">Nu acum</s:String>

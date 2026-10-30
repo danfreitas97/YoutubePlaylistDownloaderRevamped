@@ -179,7 +179,6 @@ Por favor, note que nem todos os parâmetros estarão sempre disponíveis (por e
     <s:String x:Key="LoadingTitle">Buscando os vídeos…</s:String>
     <s:String x:Key="LoadingSubtitle">Lendo títulos, vídeos e durações</s:String>
     <s:String x:Key="LoadFailed">Não deu para carregar este link</s:String>
-    <s:String x:Key="ChangeLink">Trocar link</s:String>
     <s:String x:Key="VideoFound">Vídeo encontrado</s:String>
     <s:String x:Key="PlaylistFound">Playlist encontrada</s:String>
     <s:String x:Key="ChannelFound">Canal encontrado</s:String>
@@ -312,6 +311,8 @@ Por favor, note que nem todos os parâmetros estarão sempre disponíveis (por e
     <s:String x:Key="LibraryRefresh">Atualizar</s:String>
     <s:String x:Key="LibrarySignInTitle">Baixe suas músicas curtidas e playlists</s:String>
     <s:String x:Key="LibrarySignInHint">Entre com sua conta do YouTube para vê-las aqui.</s:String>
+    <s:String x:Key="LibraryShowAll">Mostrar todas ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Mostrar menos</s:String>
     <s:String x:Key="FfmpegMissingTitle">Falta só um passo</s:String>
     <s:String x:Key="FfmpegMissingMessage">Para juntar vídeo e áudio e converter músicas, o app usa o FFmpeg, um programa gratuito. Ele ainda não está neste computador. Quer baixar agora? São cerca de {0} MB, e só precisa fazer isso uma vez.</s:String>
     <s:String x:Key="NotNow">Agora não</s:String>

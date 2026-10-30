@@ -180,7 +180,6 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LoadingTitle">מחפשים את הסרטונים…</s:String>
     <s:String x:Key="LoadingSubtitle">קוראים כותרות, סרטונים ואורכים</s:String>
     <s:String x:Key="LoadFailed">לא ניתן לטעון את הקישור הזה</s:String>
-    <s:String x:Key="ChangeLink">החלפת קישור</s:String>
     <s:String x:Key="VideoFound">הסרטון נמצא</s:String>
     <s:String x:Key="PlaylistFound">הפלייליסט נמצא</s:String>
     <s:String x:Key="ChannelFound">הערוץ נמצא</s:String>
@@ -310,6 +309,8 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LibraryRefresh">רענון</s:String>
     <s:String x:Key="LibrarySignInTitle">הורד את המוזיקה שאהבת ואת הפלייליסטים שלך</s:String>
     <s:String x:Key="LibrarySignInHint">התחבר עם חשבון YouTube שלך כדי לראות אותם כאן.</s:String>
+    <s:String x:Key="LibraryShowAll">הצג הכול ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">הצג פחות</s:String>
     <s:String x:Key="FfmpegMissingTitle">נשאר רק צעד אחד</s:String>
     <s:String x:Key="FfmpegMissingMessage">כדי לחבר וידאו ושמע ולהמיר מוזיקה, האפליקציה משתמשת ב-FFmpeg, תוכנה חינמית. היא עדיין לא מותקנת במחשב הזה. להוריד אותה עכשיו? בערך {0} MB, ורק פעם אחת.</s:String>
     <s:String x:Key="NotNow">לא עכשיו</s:String>

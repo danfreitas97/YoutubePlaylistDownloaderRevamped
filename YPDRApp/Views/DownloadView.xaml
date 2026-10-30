@@ -329,37 +329,40 @@
                         </StackPanel>
                     </DockPanel>
 
-                    <ItemsControl ItemsSource="{Binding Library}" Margin="-6,0" Focusable="False">
+                    <!-- two columns of compact rows: square cover, name, count -->
+                    <ItemsControl ItemsSource="{Binding VisibleLibrary}" Margin="-8,0" Focusable="False">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <UniformGrid Columns="4" />
+                                <UniformGrid Columns="2" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Style="{StaticResource Btn.Base}" Padding="6" Margin="0,2" c:Ui.CornerRadius="14" c:Ui.HoverBackground="{DynamicResource Hover}"
-                                        HorizontalContentAlignment="Stretch" VerticalAlignment="Top"
+                                <Button Style="{StaticResource Btn.Menu}" Height="64" Padding="8" Margin="0,1" c:Ui.CornerRadius="12"
                                         Command="{Binding DataContext.OpenLibraryPlaylistCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"
                                         ToolTip="{Binding Title}" AutomationProperties.Name="{Binding Title}">
-                                    <StackPanel>
-                                        <Grid Height="96">
-                                            <Border x:Name="thumb" CornerRadius="12" Background="{DynamicResource Chip}" ClipToBounds="True">
-                                                <Border CornerRadius="12">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="48" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border x:Name="thumb" Width="48" Height="48" CornerRadius="8" Background="{DynamicResource Chip}">
+                                            <Grid>
+                                                <Border CornerRadius="8">
                                                     <Border.Background>
-                                                        <ImageBrush ImageSource="{Binding ThumbnailUrl, Converter={StaticResource ImageUrl}, ConverterParameter=320}" Stretch="UniformToFill" />
+                                                        <ImageBrush ImageSource="{Binding ThumbnailUrl, Converter={StaticResource ImageUrl}, ConverterParameter=160}" Stretch="UniformToFill" />
                                                     </Border.Background>
                                                 </Border>
-                                            </Border>
-                                            <c:Icon x:Name="icon" Data="{StaticResource I.List}" Width="28" Height="28" Foreground="{DynamicResource Text2}"
-                                                    Visibility="{Binding ThumbnailUrl, Converter={StaticResource Collapsed}}" />
-                                            <Border Background="#CC000000" CornerRadius="4" Padding="5,1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="6"
-                                                    Visibility="{Binding CountText, Converter={StaticResource Visible}}">
-                                                <TextBlock Text="{Binding CountText}" Foreground="White" FontSize="12" FontWeight="SemiBold" />
-                                            </Border>
-                                        </Grid>
-                                        <TextBlock Text="{Binding Title}" Margin="2,8,2,2" FontSize="13.5" FontWeight="SemiBold" TextWrapping="Wrap"
-                                                   TextTrimming="CharacterEllipsis" MaxHeight="38" LineHeight="19" TextAlignment="Left" Foreground="{DynamicResource Text}" />
-                                    </StackPanel>
+                                                <c:Icon x:Name="icon" Data="{StaticResource I.List}" Width="22" Height="22" Foreground="{DynamicResource Text2}"
+                                                        Visibility="{Binding ThumbnailUrl, Converter={StaticResource Collapsed}}" />
+                                            </Grid>
+                                        </Border>
+                                        <StackPanel Grid.Column="1" Margin="12,0,4,0" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Foreground="{DynamicResource Text}" />
+                                            <TextBlock Text="{Binding Subtitle}" Style="{StaticResource T.Small}" Margin="0,2,0,0" TextTrimming="CharacterEllipsis"
+                                                       Visibility="{Binding Subtitle, Converter={StaticResource Visible}}" />
+                                        </StackPanel>
+                                    </Grid>
                                 </Button>
                                 <DataTemplate.Triggers>
                                     <DataTrigger Binding="{Binding IsLikedMusic}" Value="True">
@@ -371,6 +374,10 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+
+                    <Button Style="{StaticResource Btn.GhostSm}" HorizontalAlignment="Center" Margin="0,8,0,0"
+                            Content="{Binding LibraryToggleText}" Command="{Binding ToggleLibraryCommand}"
+                            Visibility="{Binding CanExpandLibrary, Converter={StaticResource Visible}}" />
                 </StackPanel>
 
                 <!-- what can be downloaded -->
@@ -441,21 +448,23 @@
             </Grid.RowDefinitions>
 
             <!-- link bar -->
-            <Border Grid.Row="0" Style="{StaticResource Box}" CornerRadius="28" Padding="16,8,8,8" Margin="0,0,0,24">
+            <!-- back to the link field and the library; also the mouse's back button and Alt+Left -->
+            <Border Grid.Row="0" Style="{StaticResource Box}" CornerRadius="28" Padding="8,8,16,8" Margin="0,0,0,24">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <c:Icon Data="{StaticResource I.Link}" Foreground="{DynamicResource Text2}" VerticalAlignment="Center" />
-                    <TextBlock Grid.Column="1" Text="{Binding LoadedLink}" Style="{StaticResource T.Sub}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Margin="12,0" VerticalAlignment="Center" />
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,12,0">
+                    <Button Style="{StaticResource Btn.Pill}" c:Ui.Icon="{StaticResource I.Back}" Content="{DynamicResource Back}" Command="{Binding ChangeLinkCommand}"
+                            ToolTip="Alt+←" AutomationProperties.Name="{DynamicResource Back}" />
+                    <c:Icon Grid.Column="1" Data="{StaticResource I.Link}" Foreground="{DynamicResource Text2}" VerticalAlignment="Center" Margin="16,0,0,0" />
+                    <TextBlock Grid.Column="2" Text="{Binding LoadedLink}" Style="{StaticResource T.Sub}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Margin="12,0" VerticalAlignment="Center" />
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
                         <c:Icon Data="{StaticResource I.CheckCircle}" Width="16" Height="16" Foreground="{DynamicResource Green}" />
                         <TextBlock Text="{Binding FoundText}" Foreground="{DynamicResource Green}" FontWeight="SemiBold" FontSize="13" Margin="6,0,0,0" />
                     </StackPanel>
-                    <Button Grid.Column="3" Style="{StaticResource Btn.PillSm}" Content="{DynamicResource ChangeLink}" Command="{Binding ChangeLinkCommand}" />
                 </Grid>
             </Border>
 

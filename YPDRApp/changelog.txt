@@ -1,3 +1,7 @@
+2.2.1:
+- "Sua biblioteca" em lista compacta de duas colunas, com capas do mesmo tamanho e as 8 primeiras playlists, com opção de mostrar todas
+- Botão "Voltar" em destaque na tela da playlist, também pelo botão voltar do mouse e Alt+←
+
 2.2.0:
 - Nova seção "Sua biblioteca" na tela inicial: com a conta do YouTube conectada, veja e baixe suas músicas curtidas, vídeos curtidos, Assistir mais tarde, Shorts salvos e suas playlists
 - Convite para entrar com a conta do YouTube na tela inicial

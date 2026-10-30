@@ -177,7 +177,6 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LoadingTitle">Buscando los vídeos…</s:String>
     <s:String x:Key="LoadingSubtitle">Leyendo títulos, vídeos y duraciones</s:String>
     <s:String x:Key="LoadFailed">No se pudo cargar este enlace</s:String>
-    <s:String x:Key="ChangeLink">Cambiar enlace</s:String>
     <s:String x:Key="VideoFound">Vídeo encontrado</s:String>
     <s:String x:Key="PlaylistFound">Lista encontrada</s:String>
     <s:String x:Key="ChannelFound">Canal encontrado</s:String>
@@ -307,6 +306,8 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="LibraryRefresh">Actualizar</s:String>
     <s:String x:Key="LibrarySignInTitle">Descarga tu música favorita y tus listas</s:String>
     <s:String x:Key="LibrarySignInHint">Inicia sesión con tu cuenta de YouTube para verlas aquí.</s:String>
+    <s:String x:Key="LibraryShowAll">Mostrar todas ({0})</s:String>
+    <s:String x:Key="LibraryShowLess">Mostrar menos</s:String>
     <s:String x:Key="FfmpegMissingTitle">Solo falta un paso</s:String>
     <s:String x:Key="FfmpegMissingMessage">Para unir video y audio y convertir música, la app usa FFmpeg, un programa gratuito. Todavía no está en este equipo. ¿Quieres descargarlo ahora? Son unos {0} MB y solo hace falta una vez.</s:String>
     <s:String x:Key="NotNow">Ahora no</s:String>
