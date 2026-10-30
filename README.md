@@ -109,7 +109,7 @@ git push origin v2.0.1
 
 O workflow **Release** testa o código da tag, publica o app autocontido para Windows x64 e cria a GitHub Release com o instalador `YoutubePlaylistDownloaderRevamped-Setup.exe`, `SHA256SUMS.txt`, `version.txt` e `changelog.txt`. A versão da tag é aplicada ao executável, ao instalador e aos metadados. Não é necessário cadastrar um PAT: o workflow usa o `GITHUB_TOKEN` com escrita apenas no job de publicação. Tags de pré-release não são aceitas.
 
-O atualizador passa a consultar os arquivos da release publicada e baixa o instalador da versão anunciada. A versão 2.0.0 é a única que ainda consulta arquivos na branch `main`, e ela os procura na pasta antiga `YoutubePlaylistDownloader/`. Para alcançá-la, **depois** de a release estar disponível, atualize `latestVersionWithRevision.txt`, `latestVersionLink.txt` e `changelog.txt` nessa pasta. Atualize também `latestVersion.txt`, `latestVersionWithRevision.txt` e `latestVersionLink.txt` em `YPDRApp/`. Os dois `latestVersionLink.txt` devem apontar para o instalador da tag.
+A partir da versão 2.1, o app busca atualizações automaticamente nas releases publicadas.
 
 Para testar o empacotamento local com a versão desejada: `./YPDSetup/build.ps1 -Version 2.0.1`.
 
