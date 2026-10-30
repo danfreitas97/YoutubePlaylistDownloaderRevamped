@@ -249,6 +249,9 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="NoVideoStream">No video stream is available for this video</s:String>
     <s:String x:Key="NoAudioStream">No audio stream is available for this video</s:String>
     <s:String x:Key="ConversionFailed">ffmpeg could not process the file</s:String>
+    <s:String x:Key="DownloadTimedOut">YouTube took too long to respond. Check your connection and try again.</s:String>
+    <s:String x:Key="YoutubeForbidden">YouTube refused access (403). Try again later or check your YouTube account in Settings.</s:String>
+    <s:String x:Key="DestinationAccessDenied">Access to a file or folder was denied. Check write permissions, choose another destination, or check Windows protection history.</s:String>
     <s:String x:Key="SecFileNames">File names</s:String>
     <s:String x:Key="SecAppearance">Appearance</s:String>
     <s:String x:Key="SecAdvanced">Advanced</s:String>

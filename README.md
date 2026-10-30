@@ -80,6 +80,10 @@ Remove-Item Env:YPDR_LIVE_TESTS
 
 Esses testes dependem da disponibilidade e dos limites do YouTube; ficam desativados no CI para não tornar o resultado dependente de bloqueios externos.
 
+Para testar o processamento local de um vídeo sintético de dez horas e a conversão WAV, sem baixar arquivos grandes, defina `$env:YPDR_FFMPEG_TESTS = '1'` e execute `dotnet test YoutubePlaylistDownloader.sln -c Release --filter FullyQualifiedName~LongMediaTests`. É necessário ter FFmpeg instalado. Depois, remova a variável com `Remove-Item Env:YPDR_FFMPEG_TESTS`.
+
+Durante os downloads, os arquivos intermediários ficam em uma pasta `.ypdr-*` dentro do destino escolhido. Reserve espaço para as streams e o arquivo final (o pico pode chegar a aproximadamente duas vezes o tamanho do vídeo). A pasta temporária é removida ao terminar; se o app for encerrado à força, remova as pastas `.ypdr-*` restantes somente com o app fechado. WAV usa RF64 automaticamente quando ultrapassa o limite do WAV comum; o player também precisa suportar RF64. Unidades FAT32 continuam limitadas a arquivos menores que 4 GB, independentemente do formato de mídia.
+
 ### Publicando uma release
 
 Depois de enviar as alterações para o GitHub e conferir o CI, atualize `YPDRApp/changelog.txt` e a versão padrão em `YPDRApp/YoutubePlaylistDownloader.csproj`, faça commit e envie uma tag estável (use uma versão ainda não publicada):

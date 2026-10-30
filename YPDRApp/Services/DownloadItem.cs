@@ -178,11 +178,14 @@ public partial class DownloadItem : ObservableObject
 
     #region Download
 
-    internal async Task RunAsync()
+    internal Task RunAsync() => RunAsync(null);
+
+    internal async Task RunAsync(YoutubeClient client)
     {
         cts = new CancellationTokenSource();
         var token = cts.Token;
         var tempFiles = new List<string>();
+        string workingDirectory = null;
 
         try
         {
@@ -192,19 +195,22 @@ public partial class DownloadItem : ObservableObject
             EtaText = null;
 
             Directory.CreateDirectory(SaveDirectory);
-            Directory.CreateDirectory(GlobalConsts.TempFolderPath);
+            // Keep large intermediate files on the selected drive, not the system TEMP drive.
+            // A private directory also isolates simultaneous downloads of the same video.
+            workingDirectory = Path.Combine(SaveDirectory, $".ypdr-{Guid.NewGuid():N}");
+            Directory.CreateDirectory(workingDirectory);
 
-            var client = GlobalConsts.YoutubeClient;
+            client ??= GlobalConsts.YoutubeClient;
             var manifest = await client.Videos.Streams.GetManifestAsync(Video.Id, token).ConfigureAwait(false);
             var baseName = FileBaseName(Video);
-            var tempBase = Path.Combine(GlobalConsts.TempFolderPath, GlobalConsts.CleanFileName($"{Video.Id}-{Guid.NewGuid():N}"));
+            var tempBase = Path.Combine(workingDirectory, "media");
 
             if (IsAudio)
                 await DownloadAudioAsync(client, manifest, baseName, tempBase, tempFiles, token).ConfigureAwait(false);
             else
                 await DownloadVideoAsync(client, manifest, baseName, tempBase, tempFiles, token).ConfigureAwait(false);
         }
-        catch (OperationCanceledException)
+        catch (OperationCanceledException) when (token.IsCancellationRequested)
         {
             if (pauseRequested)
             {
@@ -226,6 +232,9 @@ public partial class DownloadItem : ObservableObject
             foreach (var file in tempFiles)
                 try { if (File.Exists(file)) File.Delete(file); } catch { }
 
+            // Never recursively remove a directory that may contain unrelated files.
+            try { if (workingDirectory != null) Directory.Delete(workingDirectory); } catch { }
+
             cts.Dispose();
             cts = null;
         }
@@ -246,7 +255,8 @@ public partial class DownloadItem : ObservableObject
         var audio = SelectAudioStream(manifest) ?? throw new InvalidOperationException(Loc.Get("NoAudioStream"));
 
         var videoFile = $"{tempBase}-video.{video.Container.Name}";
-        var audioFile = $"{tempBase}-audio.{audio.Container.Name}";
+        var sharedStream = video.Url == audio.Url;
+        var audioFile = sharedStream ? videoFile : $"{tempBase}-audio.{audio.Container.Name}";
         var outputFile = $"{tempBase}.{format}";
         tempFiles.AddRange([videoFile, audioFile, outputFile]);
 
@@ -271,10 +281,13 @@ public partial class DownloadItem : ObservableObject
             }
         }
 
-        var meter = new ProgressMeter(this, [video.Size.Bytes, audio.Size.Bytes]);
-        await Task.WhenAll(
-            client.Videos.Streams.DownloadAsync(video, videoFile, meter.For(0), token).AsTask(),
-            client.Videos.Streams.DownloadAsync(audio, audioFile, meter.For(1), token).AsTask()).ConfigureAwait(false);
+        var meter = new ProgressMeter(this, sharedStream ? [video.Size.Bytes] : [video.Size.Bytes, audio.Size.Bytes]);
+        if (sharedStream)
+            await client.Videos.Streams.DownloadAsync(video, videoFile, meter.For(0), token).ConfigureAwait(false);
+        else
+            await Task.WhenAll(
+                client.Videos.Streams.DownloadAsync(video, videoFile, meter.For(0), token).AsTask(),
+                client.Videos.Streams.DownloadAsync(audio, audioFile, meter.For(1), token).AsTask()).ConfigureAwait(false);
 
         var embedCaptions = captionsFile != null && format == "mkv";
         var arguments = embedCaptions
@@ -283,8 +296,7 @@ public partial class DownloadItem : ObservableObject
 
         await RunFfmpegAsync(arguments, token).ConfigureAwait(false);
 
-        destination = UniquePath(SaveDirectory, baseName, format);
-        File.Move(outputFile, destination);
+        destination = MoveToUniquePath(outputFile, SaveDirectory, baseName, format);
 
         if (captionsFile != null && !embedCaptions)
             File.Copy(captionsFile, Path.ChangeExtension(destination, ".srt"), true);
@@ -323,7 +335,8 @@ public partial class DownloadItem : ObservableObject
                 ? $"-b:a {Settings.Bitrate}k"
                 : string.Empty;
 
-            await RunFfmpegAsync($"-i \"{downloadedFile}\" -vn {bitrate} -y \"{outputFile}\"", token).ConfigureAwait(false);
+            var largeFileOptions = AudioContainerOptions(format);
+            await RunFfmpegAsync($"-i \"{downloadedFile}\" -vn {bitrate} {largeFileOptions} -y \"{outputFile}\"", token).ConfigureAwait(false);
         }
 
         if (Settings.TagAudioFile)
@@ -345,8 +358,7 @@ public partial class DownloadItem : ObservableObject
             }
         }
 
-        destination = UniquePath(SaveDirectory, baseName, format);
-        File.Move(outputFile, destination);
+        destination = MoveToUniquePath(outputFile, SaveDirectory, baseName, format);
         tempFiles.Remove(outputFile);
 
         Finish(destination);
@@ -373,18 +385,25 @@ public partial class DownloadItem : ObservableObject
         return string.IsNullOrWhiteSpace(name) ? GlobalConsts.CleanFileName(video.Title) : name.Trim();
     }
 
-    private static string UniquePath(string directory, string baseName, string extension)
+    internal static string MoveToUniquePath(string source, string directory, string baseName, string extension)
     {
-        var path = Path.Combine(directory, $"{baseName}.{extension}");
-        for (var i = 1; File.Exists(path); i++)
-            path = Path.Combine(directory, $"{baseName}-{i}.{extension}");
-
-        return path;
+        for (var i = 0; ; i++)
+        {
+            var suffix = i == 0 ? string.Empty : $"-{i}";
+            var path = Path.Combine(directory, $"{baseName}{suffix}.{extension}");
+            try
+            {
+                File.Move(source, path);
+                return path;
+            }
+            // Another download can claim this name between checking and moving.
+            catch (IOException) when (File.Exists(source) && File.Exists(path)) { }
+        }
     }
 
-    private IVideoStreamInfo SelectVideoStream(StreamManifest manifest, string format)
+    internal IVideoStreamInfo SelectVideoStream(StreamManifest manifest, string format)
     {
-        var streams = manifest.GetVideoOnlyStreams().ToList();
+        var streams = manifest.GetVideoStreams().ToList();
         if (streams.Count == 0)
             return null;
 
@@ -413,11 +432,16 @@ public partial class DownloadItem : ObservableObject
             .FirstOrDefault();
     }
 
-    private IStreamInfo SelectAudioStream(StreamManifest manifest)
+    internal IStreamInfo SelectAudioStream(StreamManifest manifest)
     {
         var audio = manifest.GetAudioOnlyStreams().ToList();
         if (audio.Count == 0)
-            return null;
+        {
+            // FFmpeg can extract the audio from a combined stream for video/conversion modes.
+            // Original-audio mode must never silently save a video file as audio.
+            return Settings.AudioOnly ? null : manifest.GetMuxedStreams()
+                .OrderByDescending(x => x.Bitrate.BitsPerSecond).FirstOrDefault();
+        }
 
         var language = Settings.VideoLanguage;
         if (!string.IsNullOrWhiteSpace(language) && language != "default")
@@ -431,7 +455,10 @@ public partial class DownloadItem : ObservableObject
         return defaults.Count > 0 ? defaults.GetWithHighestBitrate() : audio.GetWithHighestBitrate();
     }
 
-    private async Task RunFfmpegAsync(string arguments, CancellationToken token)
+    // Ordinary RIFF WAV headers cannot represent audio larger than 4 GiB.
+    internal static string AudioContainerOptions(string format) => format == "wav" ? "-rf64 auto" : string.Empty;
+
+    internal async Task RunFfmpegAsync(string arguments, CancellationToken token)
     {
         if (!GlobalConsts.FFmpegExists)
             throw new FileNotFoundException(Loc.Get("FfmpegMissingError"));
@@ -489,6 +516,7 @@ public partial class DownloadItem : ObservableObject
             catch (OperationCanceledException)
             {
                 try { ffmpeg.Kill(true); } catch { }
+                await ffmpeg.WaitForExitAsync(CancellationToken.None).ConfigureAwait(false);
                 throw;
             }
 

@@ -27,6 +27,10 @@ static class GlobalConsts
     public static string FriendlyError(Exception ex) => ex switch
     {
         YoutubeExplode.Exceptions.RequestLimitExceededException => Loc.Get("RateLimited"),
+        OperationCanceledException => Loc.Get("DownloadTimedOut"),
+        HttpRequestException { StatusCode: System.Net.HttpStatusCode.Forbidden } => Loc.Get("YoutubeForbidden"),
+        HttpRequestException { StatusCode: System.Net.HttpStatusCode.TooManyRequests } => Loc.Get("RateLimited"),
+        UnauthorizedAccessException => Loc.Get("DestinationAccessDenied"),
         HttpRequestException => Loc.Get("NoConnection"),
         _ => ex.Message
     };
@@ -248,11 +252,14 @@ static class GlobalConsts
             "LPT5", "LPT6", "LPT7", "LPT8", "LPT9"
         };
 
-        var sanitisedNamePart = Regex.Replace(filename, invalidReStr, "_");
+        var sanitisedNamePart = Regex.Replace(filename ?? string.Empty, invalidReStr, "_").Trim().TrimEnd('.');
+        if (sanitisedNamePart.Length == 0)
+            return "_";
         foreach (var reservedWord in reservedWords)
         {
-            var reservedWordPattern = string.Format("^{0}\\.", reservedWord);
-            sanitisedNamePart = Regex.Replace(sanitisedNamePart, reservedWordPattern, "_reservedWord_.", RegexOptions.IgnoreCase);
+            if (sanitisedNamePart.Equals(reservedWord, StringComparison.OrdinalIgnoreCase) ||
+                sanitisedNamePart.StartsWith(reservedWord + ".", StringComparison.OrdinalIgnoreCase))
+                return "_" + sanitisedNamePart;
         }
 
         return sanitisedNamePart;

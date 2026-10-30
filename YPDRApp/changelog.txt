@@ -1,4 +1,12 @@
-2.0.1:
+2.1.1:
+- Timeouts de rede agora exibem erro e permitem tentar novamente
+- Arquivos temporários de download passam a usar o destino escolhido
+- Correção de conflitos ao salvar downloads simultâneos com o mesmo nome
+- Suporte a streams combinadas de vídeo e áudio nos modos de vídeo e conversão
+- WAV usa RF64 automaticamente para arquivos acima de 4 GB
+- Correção de nomes reservados do Windows e mensagens de erro mais claras
+
+2.1.0:
 - Atualização do YoutubeExplode para corrigir o erro "Video watch page is broken"
 - Links de vídeo com contexto de playlist agora carregam somente o vídeo
 - CI com testes e geração do instalador; releases automáticas por tag

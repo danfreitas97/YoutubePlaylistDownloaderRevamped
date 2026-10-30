@@ -203,7 +203,7 @@ public partial class DownloadViewModel : ObservableObject
             {
                 sources.Add(await LinkResolver.ResolveAsync(line, token));
             }
-            catch (OperationCanceledException)
+            catch (OperationCanceledException) when (token.IsCancellationRequested)
             {
                 return;
             }

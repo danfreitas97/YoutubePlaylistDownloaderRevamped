@@ -246,6 +246,9 @@ Por favor, note que nem todos os parâmetros estarão sempre disponíveis (por e
     <s:String x:Key="NoVideoStream">Não há stream de vídeo disponível para este vídeo</s:String>
     <s:String x:Key="NoAudioStream">Não há stream de áudio disponível para este vídeo</s:String>
     <s:String x:Key="ConversionFailed">O ffmpeg não conseguiu processar o arquivo</s:String>
+    <s:String x:Key="DownloadTimedOut">O YouTube demorou demais para responder. Verifique sua conexão e tente novamente.</s:String>
+    <s:String x:Key="YoutubeForbidden">O YouTube recusou o acesso (403). Tente mais tarde ou verifique sua conta do YouTube nas Configurações.</s:String>
+    <s:String x:Key="DestinationAccessDenied">O acesso a um arquivo ou pasta foi negado. Verifique a permissão de escrita, escolha outra pasta ou consulte o histórico de proteção do Windows.</s:String>
     <s:String x:Key="SecFileNames">Nome dos arquivos</s:String>
     <s:String x:Key="SecAppearance">Aparência</s:String>
     <s:String x:Key="SecAdvanced">Avançado</s:String>
