@@ -1,8 +1,8 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubePlaylistDownloader", "YoutubePlaylistDownloader\YoutubePlaylistDownloader.csproj", "{57ADF475-AC13-4912-A26B-100C6535A74D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubePlaylistDownloader", "YPDRApp\YoutubePlaylistDownloader.csproj", "{57ADF475-AC13-4912-A26B-100C6535A74D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A76AF85-987A-41AE-8D9B-5A510CFB2455}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		YPDSetup\YPDSetup.iss = YPDSetup\YPDSetup.iss
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YPDRApp.Tests", "YPDRApp.Tests\YPDRApp.Tests.csproj", "{AB0F83EC-072F-456D-BB50-B8DBFE943C53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{57ADF475-AC13-4912-A26B-100C6535A74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57ADF475-AC13-4912-A26B-100C6535A74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57ADF475-AC13-4912-A26B-100C6535A74D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0F83EC-072F-456D-BB50-B8DBFE943C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0F83EC-072F-456D-BB50-B8DBFE943C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0F83EC-072F-456D-BB50-B8DBFE943C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0F83EC-072F-456D-BB50-B8DBFE943C53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

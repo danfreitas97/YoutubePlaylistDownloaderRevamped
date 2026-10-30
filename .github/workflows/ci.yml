@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test-package:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore
+        run: dotnet restore YoutubePlaylistDownloader.sln
+      - name: Build
+        run: dotnet build YoutubePlaylistDownloader.sln -c Release --no-restore
+      - name: Test
+        run: dotnet test YoutubePlaylistDownloader.sln -c Release --no-build --logger trx --results-directory TestResults
+      - name: Test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/*.trx
+          if-no-files-found: warn
+      - name: Install Inno Setup
+        run: ./.github/scripts/install-inno.ps1
+      - name: Build installer
+        run: ./YPDSetup/build.ps1 -IsccPath $env:ISCC_PATH
+      - name: Installer artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-x64-installer
+          path: YPDSetup/output/*
+          if-no-files-found: error

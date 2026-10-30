@@ -10,7 +10,7 @@ static class GlobalConsts
     public static readonly string CurrentDir;
     private static readonly string ConfigFilePath;
     private static readonly string ErrorFilePath;
-    public static readonly Version VERSION = new(2, 0, 0);
+    public static readonly Version VERSION = typeof(GlobalConsts).Assembly.GetName().Version;
     public static readonly string ChannelSubscriptionsFilePath;
     private static DownloadSettings downloadSettings;
     public static readonly string DownloadSettingsFilePath;
@@ -18,7 +18,7 @@ static class GlobalConsts
     public static Objects.Settings settings;
 
     // Where the update check and the update setup are fetched from.
-    public const string RepositoryRawUrl = "https://raw.githubusercontent.com/danfreitas97/YoutubePlaylistDownloaderRevamped/main/YoutubePlaylistDownloader/";
+    public const string RepositoryRawUrl = "https://raw.githubusercontent.com/danfreitas97/YoutubePlaylistDownloaderRevamped/main/YPDRApp/";
     public const string RepositoryUrl = "https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped";
 
     public static YoutubeClient YoutubeClient => YoutubeCookies.HasCookies ? new(YoutubeCookies.Current) : new();

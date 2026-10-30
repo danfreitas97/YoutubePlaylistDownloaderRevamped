@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '8.0.x'
+      - name: Validate version tag
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_REF_NAME -notmatch '^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$') {
+            throw 'Expected a stable release tag vX.Y.Z (for example v2.0.1)'
+          }
+          "RELEASE_VERSION=$($env:GITHUB_REF_NAME.Substring(1))" >> $env:GITHUB_ENV
+      - name: Test release
+        run: dotnet test YoutubePlaylistDownloader.sln -c Release "-p:Version=$env:RELEASE_VERSION" --logger trx --results-directory TestResults
+      - name: Test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-test-results
+          path: TestResults/*.trx
+          if-no-files-found: warn
+      - name: Install Inno Setup
+        run: ./.github/scripts/install-inno.ps1
+      - name: Build release installer
+        run: ./YPDSetup/build.ps1 -Version $env:RELEASE_VERSION -IsccPath $env:ISCC_PATH
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-assets
+          path: YPDSetup/output/*
+          if-no-files-found: error
+
+  publish:
+    needs: package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-assets
+          path: release-assets
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" release-assets/* --verify-tag --title "$RELEASE_TAG" --generate-notes

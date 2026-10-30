@@ -21,19 +21,20 @@ public static class UpdateService
     public static async Task<UpdateInfo> CheckAsync()
     {
         using var client = CreateClient();
-        var latest = Version.Parse((await client.GetStringAsync($"{GlobalConsts.RepositoryRawUrl}latestVersionWithRevision.txt").ConfigureAwait(false)).Trim());
+        var latest = Version.Parse((await client.GetStringAsync($"{GlobalConsts.RepositoryUrl}/releases/latest/download/version.txt").ConfigureAwait(false)).Trim());
 
         if (latest <= GlobalConsts.VERSION)
             return null;
 
-        var changelog = await client.GetStringAsync($"{GlobalConsts.RepositoryRawUrl}changelog.txt").ConfigureAwait(false);
+        var changelog = await client.GetStringAsync($"{GlobalConsts.RepositoryUrl}/releases/download/v{latest.ToString(3)}/changelog.txt").ConfigureAwait(false);
         return new UpdateInfo(latest, changelog);
     }
 
     public static async Task DownloadAsync(UpdateInfo update, IProgress<double> progress, CancellationToken token)
     {
         using var client = CreateClient();
-        var link = (await client.GetStringAsync($"{GlobalConsts.RepositoryRawUrl}latestVersionLink.txt", token).ConfigureAwait(false)).Trim();
+        var link = $"{GlobalConsts.RepositoryUrl}/releases/download/v{update.Version.ToString(3)}/YoutubePlaylistDownloaderRevamped-Setup.exe";
+        Directory.CreateDirectory(GlobalConsts.TempFolderPath);
         var path = Path.Combine(GlobalConsts.TempFolderPath, $"Setup {update.Version}.exe");
 
         using var response = await client.GetAsync(link, HttpCompletionOption.ResponseHeadersRead, token).ConfigureAwait(false);

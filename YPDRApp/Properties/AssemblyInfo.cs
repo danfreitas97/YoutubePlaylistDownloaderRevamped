@@ -45,7 +45,6 @@
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("YPDRApp.Tests")]
 [assembly: NeutralResourcesLanguage("en")]
 

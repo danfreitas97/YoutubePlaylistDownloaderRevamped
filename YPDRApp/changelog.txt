@@ -1,3 +1,9 @@
+2.0.1:
+- Atualização do YoutubeExplode para corrigir o erro "Video watch page is broken"
+- Links de vídeo com contexto de playlist agora carregam somente o vídeo
+- CI com testes e geração do instalador; releases automáticas por tag
+- O atualizador consulta os metadados da release publicada
+
 2.0.0:
 - Interface totalmente nova, com tema claro e escuro
 - Fila de downloads com pausar, retomar, cancelar e tentar de novo

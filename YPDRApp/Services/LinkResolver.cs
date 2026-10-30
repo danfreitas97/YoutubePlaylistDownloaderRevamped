@@ -26,8 +26,12 @@ public static class LinkResolver
 
     public static LinkKind Detect(string link)
     {
-        if (string.IsNullOrWhiteSpace(link))
+        if (string.IsNullOrWhiteSpace(link) || !IsYoutubeUrl(link))
             return LinkKind.None;
+
+        // A watch/share URL refers to one video even when YouTube adds playlist context.
+        if (YoutubeHelpers.TryParseVideoId(link, out _))
+            return LinkKind.Video;
 
         if (YoutubeHelpers.TryParsePlaylistId(link, out _))
             return LinkKind.Playlist;
@@ -35,20 +39,33 @@ public static class LinkResolver
         if (YoutubeHelpers.TryParseChannelId(link, out _) || YoutubeHelpers.TryParseUsername(link, out _) || YoutubeHelpers.TryParseHandle(link, out _))
             return LinkKind.Channel;
 
-        if (IsYoutubeUrl(link) && YoutubeHelpers.TryParseVideoId(link, out _))
-            return LinkKind.Video;
-
         return LinkKind.None;
     }
 
-    private static bool IsYoutubeUrl(string link) =>
-        link.Contains("youtube.", StringComparison.OrdinalIgnoreCase) || link.Contains("youtu.be", StringComparison.OrdinalIgnoreCase);
+    private static bool IsYoutubeUrl(string link)
+    {
+        if (!link.Contains("://", StringComparison.Ordinal))
+            link = "https://" + link;
+
+        if (!Uri.TryCreate(link, UriKind.Absolute, out var uri) ||
+            (uri.Scheme != Uri.UriSchemeHttps && uri.Scheme != Uri.UriSchemeHttp))
+            return false;
+
+        return uri.Host.Equals("youtube.com", StringComparison.OrdinalIgnoreCase) ||
+            uri.Host.EndsWith(".youtube.com", StringComparison.OrdinalIgnoreCase) ||
+            uri.Host.Equals("youtu.be", StringComparison.OrdinalIgnoreCase) ||
+            uri.Host.Equals("www.youtu.be", StringComparison.OrdinalIgnoreCase);
+    }
 
     public static async Task<ResolvedSource> ResolveAsync(string link, CancellationToken token)
     {
+        var kind = Detect(link);
+        if (kind == LinkKind.None)
+            throw new InvalidOperationException(Loc.Get("NoVideosToDownload"));
+
         var client = GlobalConsts.YoutubeClient;
 
-        if (YoutubeHelpers.TryParsePlaylistId(link, out var playlistId))
+        if (kind == LinkKind.Playlist && YoutubeHelpers.TryParsePlaylistId(link, out var playlistId))
         {
             var playlist = await client.Playlists.GetAsync(playlistId.Value, token).ConfigureAwait(false);
             var videos = await client.Playlists.GetVideosAsync(playlist.Id, token).CollectAsync().ConfigureAwait(false);

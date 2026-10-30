@@ -59,10 +59,41 @@ Requisitos: Windows e [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/
 ```
 git clone https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped.git
 cd YoutubePlaylistDownloaderRevamped
-dotnet build YoutubePlaylistDownloader/YoutubePlaylistDownloader.csproj -c Release
+dotnet build YPDRApp/YoutubePlaylistDownloader.csproj -c Release
 ```
 
-Para gerar o instalador, instale o [Inno Setup 6](https://jrsoftware.org/isinfo.php) (`winget install JRSoftware.InnoSetup`) e rode `YPDSetup/build.ps1`. O instalador sai em `YPDSetup/output`.
+Para gerar o instalador, instale o [Inno Setup 6.6 ou superior](https://jrsoftware.org/isinfo.php) (`winget install JRSoftware.InnoSetup`) e rode `./YPDSetup/build.ps1`. O instalador sai em `YPDSetup/output`. O CI usa o Inno Setup 6.7.3.
+
+### Testes e CI
+
+Execute `dotnet test YoutubePlaylistDownloader.sln -c Release` no Windows. Os testes cobrem reconhecimento de links e o fluxo de seleção/nome de arquivo de vídeo único. Links de vídeo com `list=` baixam somente o vídeo; para carregar a playlist, use `https://www.youtube.com/playlist?list=ID`.
+
+O workflow **CI** compila, executa os testes e gera o instalador em cada push de branch e pull request. Os resultados dos testes e o instalador ficam nos artifacts da execução em **Actions**.
+
+Há também testes opcionais que baixam o áudio original e o MP4 de um vídeo público, passando pelo resolvedor e pelo processamento de download. Eles exigem acesso à rede e FFmpeg instalado (pelo app ou no `PATH`). Para executá-los no PowerShell:
+
+```powershell
+$env:YPDR_LIVE_TESTS = '1'
+dotnet test YoutubePlaylistDownloader.sln -c Release --filter Category=Integration
+Remove-Item Env:YPDR_LIVE_TESTS
+```
+
+Esses testes dependem da disponibilidade e dos limites do YouTube; ficam desativados no CI para não tornar o resultado dependente de bloqueios externos.
+
+### Publicando uma release
+
+Depois de enviar as alterações para o GitHub e conferir o CI, atualize `YPDRApp/changelog.txt` e a versão padrão em `YPDRApp/YoutubePlaylistDownloader.csproj`, faça commit e envie uma tag estável (use uma versão ainda não publicada):
+
+```powershell
+git tag v2.0.1
+git push origin v2.0.1
+```
+
+O workflow **Release** testa o código da tag, publica o app autocontido para Windows x64 e cria a GitHub Release com o instalador `YoutubePlaylistDownloaderRevamped-Setup.exe`, `SHA256SUMS.txt`, `version.txt` e `changelog.txt`. A versão da tag é aplicada ao executável, ao instalador e aos metadados. Não é necessário cadastrar um PAT: o workflow usa o `GITHUB_TOKEN` com escrita apenas no job de publicação. Tags de pré-release não são aceitas.
+
+O atualizador passa a consultar os arquivos da release publicada e baixa o instalador da versão anunciada. Para alcançar instalações antigas que ainda consultam os arquivos na branch `main`, atualize também `latestVersion.txt`, `latestVersionWithRevision.txt` e `latestVersionLink.txt` **depois** de a release estar disponível. O último deve apontar para o instalador dessa tag.
+
+Para testar o empacotamento local com a versão desejada: `./YPDSetup/build.ps1 -Version 2.0.1`.
 
 Para baixar vídeo e converter áudio, o app usa o [FFmpeg](https://ffmpeg.org/). Ele procura o `ffmpeg.exe` ao lado do executável, depois em `%AppData%\YouTube Playlist Downloader Revamped` e por fim no `PATH`. Se não achar, oferece baixar uma versão pronta do [FFmpegBin](https://github.com/Tyrrrz/FFmpegBin) para a pasta do app.
 
@@ -74,7 +105,7 @@ Este app não é afiliado ao YouTube nem ao Google. Baixar vídeos pode ir contr
 
 ## Licença
 
-Distribuído sob a [Licença Apache 2.0](LICENSE), a mesma do projeto original. Este fork modifica o código original: a interface foi reescrita e a lógica de download foi reorganizada. As licenças das bibliotecas usadas estão em [License.txt](YoutubePlaylistDownloader/License.txt).
+Distribuído sob a [Licença Apache 2.0](LICENSE), a mesma do projeto original. Este fork modifica o código original: a interface foi reescrita e a lógica de download foi reorganizada. As licenças das bibliotecas usadas estão em [License.txt](YPDRApp/License.txt).
 
 ## Créditos
 
