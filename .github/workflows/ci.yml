@@ -30,7 +30,7 @@ jobs:
         run: dotnet test YoutubePlaylistDownloader.sln -c Release --no-build --logger trx --results-directory TestResults
       - name: Test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: TestResults/*.trx
@@ -40,7 +40,7 @@ jobs:
       - name: Build installer
         run: ./YPDSetup/build.ps1 -IsccPath $env:ISCC_PATH
       - name: Installer artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: windows-x64-installer
           path: YPDSetup/output/*
