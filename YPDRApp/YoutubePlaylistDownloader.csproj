@@ -57,11 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="appsettings.json" />
-    <Resource Include="changelog.txt" />
-    <Resource Include="latestVersion.txt" />
-    <Resource Include="latestVersionLink.txt" />
-    <Resource Include="ChangelogAllVersions.txt" />
-    <Resource Include="latestVersionWithRevision.txt" />
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

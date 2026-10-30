@@ -18,7 +18,6 @@ static class GlobalConsts
     public static Objects.Settings settings;
 
     // Where the update check and the update setup are fetched from.
-    public const string RepositoryRawUrl = "https://raw.githubusercontent.com/danfreitas97/YoutubePlaylistDownloaderRevamped/main/YPDRApp/";
     public const string RepositoryUrl = "https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped";
 
     public static YoutubeClient YoutubeClient => YoutubeCookies.HasCookies ? new(YoutubeCookies.Current) : new();
