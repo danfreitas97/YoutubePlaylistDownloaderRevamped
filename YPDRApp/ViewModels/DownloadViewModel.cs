@@ -27,8 +27,74 @@ public partial class DownloadViewModel : ObservableObject
         VideosView = CollectionViewSource.GetDefaultView(Videos);
         VideosView.Filter = FilterVideo;
         LoadFromSettings();
-        Loc.LanguageChanged += (s, e) => RefreshTexts();
+        Loc.LanguageChanged += (s, e) =>
+        {
+            RefreshTexts();
+            Library = [.. Library];
+        };
+
+        YoutubeCookies.Changed += (s, e) =>
+        {
+            OnPropertyChanged(nameof(IsSignedIn));
+            _ = LoadLibraryAsync();
+        };
+        _ = LoadLibraryAsync();
     }
+
+    #region Account library
+
+    private CancellationTokenSource libraryCts;
+
+    /// <summary>Liked music and the playlists of the signed-in account, shown under the link field.</summary>
+    [ObservableProperty] private IReadOnlyList<LibraryPlaylist> library = [];
+    [ObservableProperty] private bool isLibraryLoading;
+    [ObservableProperty] private string libraryError;
+
+    public bool IsSignedIn => YoutubeCookies.HasCookies;
+
+    [RelayCommand]
+    private Task RefreshLibrary() => LoadLibraryAsync();
+
+    private async Task LoadLibraryAsync()
+    {
+        libraryCts?.Cancel();
+        Library = [];
+        LibraryError = null;
+        IsLibraryLoading = false;
+        if (!YoutubeCookies.HasCookies)
+            return;
+
+        var cts = libraryCts = new CancellationTokenSource();
+        IsLibraryLoading = true;
+        try
+        {
+            Library = await YoutubeLibrary.GetPlaylistsAsync(cts.Token);
+        }
+        catch (OperationCanceledException) when (cts.IsCancellationRequested)
+        {
+            return;
+        }
+        catch (Exception ex)
+        {
+            await GlobalConsts.Log(ex.ToString(), "LoadLibrary");
+            LibraryError = Loc.Get("LibraryLoadFailed");
+        }
+
+        IsLibraryLoading = false;
+    }
+
+    [RelayCommand]
+    private async Task OpenLibraryPlaylist(LibraryPlaylist playlist)
+    {
+        if (playlist == null)
+            return;
+
+        LinkText = playlist.Link;
+        if (CanLoad)
+            await Load();
+    }
+
+    #endregion
 
     #region Link input
 
@@ -251,7 +317,12 @@ public partial class DownloadViewModel : ObservableObject
     public ICollectionView VideosView { get; }
 
     [ObservableProperty] private string sourceTitle;
-    [ObservableProperty] private string sourceAuthor;
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(SourceAuthorSeparator))]
+    private string sourceAuthor;
+
+    /// <summary>The account's automatic playlists (liked videos, liked music) have no author to separate from the counts.</summary>
+    public string SourceAuthorSeparator => string.IsNullOrWhiteSpace(SourceAuthor) ? string.Empty : "  ·  ";
     [ObservableProperty] private string sourceKindText;
     [ObservableProperty] private string sourceMeta;
     [ObservableProperty] private string sourceThumbnail;

@@ -300,6 +300,13 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="SignedIn">Sesión iniciada en YouTube</s:String>
     <s:String x:Key="SignInUnavailable">No se pudo abrir la ventana de inicio de sesión porque Microsoft Edge WebView2 no está instalado. Usa “Importar un archivo cookies.txt”.</s:String>
     <s:String x:Key="ImportCookiesInstead">O importa un archivo cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">Tu biblioteca</s:String>
+    <s:String x:Key="LibraryHint">Tu música que te gusta y tus listas. Elige una para ver sus vídeos.</s:String>
+    <s:String x:Key="LibraryLoading">Cargando tus listas…</s:String>
+    <s:String x:Key="LibraryLoadFailed">No se pudieron cargar tus listas. Puede que tu sesión haya caducado.</s:String>
+    <s:String x:Key="LibraryRefresh">Actualizar</s:String>
+    <s:String x:Key="LibrarySignInTitle">Descarga tu música favorita y tus listas</s:String>
+    <s:String x:Key="LibrarySignInHint">Inicia sesión con tu cuenta de YouTube para verlas aquí.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Solo falta un paso</s:String>
     <s:String x:Key="FfmpegMissingMessage">Para unir video y audio y convertir música, la app usa FFmpeg, un programa gratuito. Todavía no está en este equipo. ¿Quieres descargarlo ahora? Son unos {0} MB y solo hace falta una vez.</s:String>
     <s:String x:Key="NotNow">Ahora no</s:String>

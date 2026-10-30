@@ -302,6 +302,13 @@ redémarrage du programme pour prendre effet)</s:String>
     <s:String x:Key="SignedIn">Connecté à YouTube</s:String>
     <s:String x:Key="SignInUnavailable">Impossible d’ouvrir la fenêtre de connexion, car Microsoft Edge WebView2 n’est pas installé. Utilisez plutôt « Importer un fichier cookies.txt ».</s:String>
     <s:String x:Key="ImportCookiesInstead">Ou importer un fichier cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">Votre bibliothèque</s:String>
+    <s:String x:Key="LibraryHint">Vos titres aimés et vos playlists. Choisissez-en une pour voir ses vidéos.</s:String>
+    <s:String x:Key="LibraryLoading">Chargement de vos playlists…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Impossible de charger vos playlists. Votre session a peut-être expiré.</s:String>
+    <s:String x:Key="LibraryRefresh">Actualiser</s:String>
+    <s:String x:Key="LibrarySignInTitle">Téléchargez vos titres aimés et vos playlists</s:String>
+    <s:String x:Key="LibrarySignInHint">Connectez-vous avec votre compte YouTube pour les voir ici.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Plus qu’une étape</s:String>
     <s:String x:Key="FfmpegMissingMessage">Pour assembler la vidéo et l’audio et convertir la musique, l’app utilise FFmpeg, un programme gratuit. Il n’est pas encore sur cet ordinateur. Le télécharger maintenant ? Environ {0} Mo, une seule fois.</s:String>
     <s:String x:Key="NotNow">Pas maintenant</s:String>

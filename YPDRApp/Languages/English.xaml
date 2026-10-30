@@ -308,6 +308,13 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="SignedIn">Signed in to YouTube</s:String>
     <s:String x:Key="SignInUnavailable">The sign-in window couldn&apos;t open because Microsoft Edge WebView2 isn&apos;t installed. Use “Import a cookies.txt file” instead.</s:String>
     <s:String x:Key="ImportCookiesInstead">Or import a cookies.txt file</s:String>
+    <s:String x:Key="LibraryTitle">Your library</s:String>
+    <s:String x:Key="LibraryHint">Your liked music and playlists. Pick one to see its videos.</s:String>
+    <s:String x:Key="LibraryLoading">Loading your playlists…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Couldn&apos;t load your playlists. Your session may have expired.</s:String>
+    <s:String x:Key="LibraryRefresh">Refresh</s:String>
+    <s:String x:Key="LibrarySignInTitle">Download your liked music and playlists</s:String>
+    <s:String x:Key="LibrarySignInHint">Sign in with your YouTube account to see them here.</s:String>
     <s:String x:Key="FfmpegMissingTitle">One more step</s:String>
     <s:String x:Key="FfmpegMissingMessage">To join video and audio and to convert music, the app uses FFmpeg, a free program. It isn&apos;t on this computer yet. Download it now? It&apos;s about {0} MB and only needed once.</s:String>
     <s:String x:Key="NotNow">Not now</s:String>

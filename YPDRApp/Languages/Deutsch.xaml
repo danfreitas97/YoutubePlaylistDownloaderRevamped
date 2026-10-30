@@ -303,6 +303,13 @@ wenn nur ein einzelnes Video heruntergeladen wird). In solchen Fällen werden fe
     <s:String x:Key="SignedIn">Bei YouTube angemeldet</s:String>
     <s:String x:Key="SignInUnavailable">Das Anmeldefenster konnte nicht geöffnet werden, weil Microsoft Edge WebView2 nicht installiert ist. Verwende stattdessen „cookies.txt-Datei importieren“.</s:String>
     <s:String x:Key="ImportCookiesInstead">Oder eine cookies.txt-Datei importieren</s:String>
+    <s:String x:Key="LibraryTitle">Deine Mediathek</s:String>
+    <s:String x:Key="LibraryHint">Deine Lieblingsmusik und Playlists. Wähle eine aus, um ihre Videos zu sehen.</s:String>
+    <s:String x:Key="LibraryLoading">Deine Playlists werden geladen…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Deine Playlists konnten nicht geladen werden. Möglicherweise ist deine Sitzung abgelaufen.</s:String>
+    <s:String x:Key="LibraryRefresh">Aktualisieren</s:String>
+    <s:String x:Key="LibrarySignInTitle">Lade deine Lieblingsmusik und Playlists herunter</s:String>
+    <s:String x:Key="LibrarySignInHint">Melde dich mit deinem YouTube-Konto an, um sie hier zu sehen.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Nur noch ein Schritt</s:String>
     <s:String x:Key="FfmpegMissingMessage">Um Video und Audio zusammenzufügen und Musik umzuwandeln, nutzt die App FFmpeg, ein kostenloses Programm. Es ist noch nicht auf diesem Computer. Jetzt herunterladen? Etwa {0} MB, nur einmal nötig.</s:String>
     <s:String x:Key="NotNow">Nicht jetzt</s:String>

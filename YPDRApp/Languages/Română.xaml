@@ -299,6 +299,13 @@ Puteți adăuga orice text între parametri, doar parametrii vor fi înlocuiți.
     <s:String x:Key="SignedIn">Conectat la YouTube</s:String>
     <s:String x:Key="SignInUnavailable">Fereastra de conectare nu a putut fi deschisă deoarece Microsoft Edge WebView2 nu este instalat. Folosește „Importă un fișier cookies.txt”.</s:String>
     <s:String x:Key="ImportCookiesInstead">Sau importă un fișier cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">Biblioteca ta</s:String>
+    <s:String x:Key="LibraryHint">Muzica apreciată și playlisturile tale. Alege unul pentru a-i vedea videoclipurile.</s:String>
+    <s:String x:Key="LibraryLoading">Se încarcă playlisturile…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Playlisturile nu au putut fi încărcate. Este posibil ca sesiunea să fi expirat.</s:String>
+    <s:String x:Key="LibraryRefresh">Reîmprospătează</s:String>
+    <s:String x:Key="LibrarySignInTitle">Descarcă muzica apreciată și playlisturile tale</s:String>
+    <s:String x:Key="LibrarySignInHint">Conectează-te cu contul YouTube pentru a le vedea aici.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Mai e un singur pas</s:String>
     <s:String x:Key="FfmpegMissingMessage">Pentru a uni video și audio și a converti muzica, aplicația folosește FFmpeg, un program gratuit. Nu este încă pe acest computer. Îl descarci acum? Aproximativ {0} MB, o singură dată.</s:String>
     <s:String x:Key="NotNow">Nu acum</s:String>

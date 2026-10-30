@@ -301,6 +301,13 @@ Let er aub op dat niet alle parameters altijd beschikbaar zijn (bijvoorbeeld, in
     <s:String x:Key="SignedIn">Aangemeld bij YouTube</s:String>
     <s:String x:Key="SignInUnavailable">Het aanmeldvenster kon niet worden geopend omdat Microsoft Edge WebView2 niet is geïnstalleerd. Gebruik in plaats daarvan “Een cookies.txt-bestand importeren”.</s:String>
     <s:String x:Key="ImportCookiesInstead">Of importeer een cookies.txt-bestand</s:String>
+    <s:String x:Key="LibraryTitle">Je bibliotheek</s:String>
+    <s:String x:Key="LibraryHint">Je gelikete muziek en playlists. Kies er een om de video&apos;s te zien.</s:String>
+    <s:String x:Key="LibraryLoading">Je playlists laden…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Je playlists konden niet worden geladen. Je sessie is misschien verlopen.</s:String>
+    <s:String x:Key="LibraryRefresh">Vernieuwen</s:String>
+    <s:String x:Key="LibrarySignInTitle">Download je gelikete muziek en playlists</s:String>
+    <s:String x:Key="LibrarySignInHint">Log in met je YouTube-account om ze hier te zien.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Nog één stap</s:String>
     <s:String x:Key="FfmpegMissingMessage">Om video en audio samen te voegen en muziek te converteren gebruikt de app FFmpeg, een gratis programma. Het staat nog niet op deze computer. Nu downloaden? Ongeveer {0} MB, maar één keer nodig.</s:String>
     <s:String x:Key="NotNow">Niet nu</s:String>

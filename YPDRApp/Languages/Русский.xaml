@@ -304,6 +304,13 @@ $playlist: Название плейлиста
     <s:String x:Key="SignedIn">Вход в YouTube выполнен</s:String>
     <s:String x:Key="SignInUnavailable">Не удалось открыть окно входа: не установлен Microsoft Edge WebView2. Используйте «Импортировать файл cookies.txt».</s:String>
     <s:String x:Key="ImportCookiesInstead">Или импортируйте файл cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">Ваша библиотека</s:String>
+    <s:String x:Key="LibraryHint">Понравившаяся музыка и ваши плейлисты. Выберите плейлист, чтобы увидеть его видео.</s:String>
+    <s:String x:Key="LibraryLoading">Загрузка плейлистов…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Не удалось загрузить плейлисты. Возможно, срок действия сеанса истёк.</s:String>
+    <s:String x:Key="LibraryRefresh">Обновить</s:String>
+    <s:String x:Key="LibrarySignInTitle">Скачивайте понравившуюся музыку и плейлисты</s:String>
+    <s:String x:Key="LibrarySignInHint">Войдите в аккаунт YouTube, чтобы увидеть их здесь.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Остался один шаг</s:String>
     <s:String x:Key="FfmpegMissingMessage">Чтобы объединять видео и звук и конвертировать музыку, приложение использует бесплатную программу FFmpeg. На этом компьютере её пока нет. Скачать сейчас? Около {0} МБ, нужно всего один раз.</s:String>
     <s:String x:Key="NotNow">Не сейчас</s:String>

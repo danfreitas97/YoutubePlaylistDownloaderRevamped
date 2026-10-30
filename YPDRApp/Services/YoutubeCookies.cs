@@ -14,6 +14,9 @@ public static class YoutubeCookies
     /// <summary>Browser profile of the sign-in window, kept apart from the user's own browsers.</summary>
     public static string BrowserProfilePath { get; } = Path.Combine(GlobalConsts.AppDataPath, "SignIn");
 
+    /// <summary>Raised after signing in, importing cookies or signing out.</summary>
+    public static event EventHandler Changed;
+
     public static IReadOnlyList<Cookie> Current => cookies ??= File.Exists(FilePath) ? Parse(File.ReadAllLines(FilePath)) : [];
 
     public static bool HasCookies => Current.Count > 0;
@@ -29,6 +32,7 @@ public static class YoutubeCookies
         Directory.CreateDirectory(Path.GetDirectoryName(FilePath));
         File.WriteAllLines(FilePath, lines);
         cookies = parsed;
+        Changed?.Invoke(null, EventArgs.Empty);
         return parsed.Count;
     }
 
@@ -51,6 +55,7 @@ public static class YoutubeCookies
         Directory.CreateDirectory(Path.GetDirectoryName(FilePath));
         File.WriteAllLines(FilePath, lines);
         cookies = parsed;
+        Changed?.Invoke(null, EventArgs.Empty);
         return parsed.Count;
     }
 
@@ -74,6 +79,7 @@ public static class YoutubeCookies
         }
 
         cookies = [];
+        Changed?.Invoke(null, EventArgs.Empty);
     }
 
     private static List<Cookie> Parse(IEnumerable<string> lines)

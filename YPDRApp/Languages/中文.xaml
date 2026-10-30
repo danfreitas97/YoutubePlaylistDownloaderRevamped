@@ -304,6 +304,13 @@ $playlist: 播放列表的名称
     <s:String x:Key="SignedIn">已登录 YouTube</s:String>
     <s:String x:Key="SignInUnavailable">无法打开登录窗口，因为未安装 Microsoft Edge WebView2。请改用“导入 cookies.txt 文件”。</s:String>
     <s:String x:Key="ImportCookiesInstead">或导入 cookies.txt 文件</s:String>
+    <s:String x:Key="LibraryTitle">你的媒体库</s:String>
+    <s:String x:Key="LibraryHint">你喜欢的音乐和播放列表。选择一个即可查看其中的视频。</s:String>
+    <s:String x:Key="LibraryLoading">正在加载你的播放列表…</s:String>
+    <s:String x:Key="LibraryLoadFailed">无法加载你的播放列表。你的登录可能已过期。</s:String>
+    <s:String x:Key="LibraryRefresh">刷新</s:String>
+    <s:String x:Key="LibrarySignInTitle">下载你喜欢的音乐和播放列表</s:String>
+    <s:String x:Key="LibrarySignInHint">使用你的 YouTube 账号登录即可在此处看到它们。</s:String>
     <s:String x:Key="FfmpegMissingTitle">只差一步</s:String>
     <s:String x:Key="FfmpegMissingMessage">为了合并视频和音频以及转换音乐，本应用需要使用免费程序 FFmpeg。这台电脑上还没有它。现在下载吗？大约 {0} MB，只需下载一次。</s:String>
     <s:String x:Key="NotNow">以后再说</s:String>

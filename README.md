@@ -13,6 +13,7 @@ Este projeto é um fork com interface e fluxo de uso totalmente refeitos do [You
 ## Recursos
 
 - **Cole e pronto:** aceita link de vídeo, playlist ou canal (`youtube.com/@nome`). Cole vários links, um por linha, para baixar tudo de uma vez.
+- **Sua biblioteca do YouTube:** com a sua conta conectada, a tela inicial mostra suas músicas curtidas, vídeos curtidos, Assistir mais tarde, Shorts salvos e todas as suas playlists. Um clique e é só escolher o que baixar.
 - **Escolha o que baixar:** veja os vídeos da playlist em grade ou lista, filtre, busque e marque só os que quiser. O app avisa quais já existem na pasta.
 - **Vídeo ou só áudio:** MP4 ou MKV até 8K, ou áudio em MP3, M4A, AAC, OPUS, FLAC, WAV, OGG e WEBM. Também dá para salvar o áudio original, sem conversão.
 - **Fila de downloads:** vários downloads ao mesmo tempo, com progresso, velocidade e tempo restante. Dá para pausar, retomar, cancelar e tentar de novo.
@@ -39,6 +40,19 @@ O app funciona no Windows 10 e 11 (64 bits) e não precisa de nada instalado ant
 4. Clique em **Baixar** e acompanhe tudo na tela **Downloads**.
 
 Na primeira vez que você baixar um vídeo ou converter um áudio, o app vai pedir para baixar o **FFmpeg**, um programa gratuito que junta vídeo e áudio e converte as músicas. É só clicar em **Baixar**: são cerca de 75 MB, uma vez só, e depois o seu download continua sozinho.
+
+## Sua biblioteca: músicas curtidas e suas playlists
+
+Entre com a sua conta em **Configurações › Conta do YouTube › Entrar com o YouTube** (ou pelo botão **Entrar com o YouTube** na tela inicial). A tela inicial passa a mostrar, logo abaixo do campo de link, a seção **Sua biblioteca** com:
+
+- **Músicas curtidas** do YouTube Music;
+- **Vídeos curtidos**, **Assistir mais tarde** e **Shorts salvos**;
+- todas as suas playlists, inclusive as privadas, e as playlists de outras pessoas que você salvou.
+
+Clique numa delas para ver os vídeos, marcar o que quiser e baixar como qualquer outra playlist. Os nomes aparecem como no YouTube, no idioma da sua conta. O botão de atualizar, ao lado do título da seção, recarrega a lista.
+
+> [!NOTE]
+> O YouTube não oferece uma forma pública de listar as playlists de uma conta. Para montar essa lista, o app usa a mesma API interna que o site do YouTube usa, com a sua sessão. Essa API não é documentada e pode mudar sem aviso. Se um dia a seção mostrar **"Não foi possível carregar suas playlists"** mesmo com você conectado, provavelmente o YouTube mudou algo: [abra uma issue](https://github.com/danfreitas97/YoutubePlaylistDownloaderRevamped/issues) que a correção sai numa nova versão. Enquanto isso, colar o link da playlist no campo de link continua funcionando normalmente.
 
 ## "O YouTube está bloqueando as requisições"
 

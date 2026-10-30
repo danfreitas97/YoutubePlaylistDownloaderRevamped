@@ -305,6 +305,13 @@ Bütün parametrelerin her zaman geçerli olamayabileceği dikkate alınmalıdı
     <s:String x:Key="SignedIn">YouTube&apos;da oturum açıldı</s:String>
     <s:String x:Key="SignInUnavailable">Microsoft Edge WebView2 yüklü olmadığı için oturum açma penceresi açılamadı. Bunun yerine “cookies.txt dosyası içe aktar” seçeneğini kullan.</s:String>
     <s:String x:Key="ImportCookiesInstead">Ya da bir cookies.txt dosyası içe aktar</s:String>
+    <s:String x:Key="LibraryTitle">Kitaplığın</s:String>
+    <s:String x:Key="LibraryHint">Beğendiğin müzikler ve oynatma listelerin. Videolarını görmek için birini seç.</s:String>
+    <s:String x:Key="LibraryLoading">Oynatma listelerin yükleniyor…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Oynatma listelerin yüklenemedi. Oturumunun süresi dolmuş olabilir.</s:String>
+    <s:String x:Key="LibraryRefresh">Yenile</s:String>
+    <s:String x:Key="LibrarySignInTitle">Beğendiğin müzikleri ve oynatma listelerini indir</s:String>
+    <s:String x:Key="LibrarySignInHint">Burada görmek için YouTube hesabınla oturum aç.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Son bir adım</s:String>
     <s:String x:Key="FfmpegMissingMessage">Video ile sesi birleştirmek ve müzik dönüştürmek için uygulama ücretsiz bir program olan FFmpeg&apos;i kullanır. Bu bilgisayarda henüz yok. Şimdi indirilsin mi? Yaklaşık {0} MB, yalnızca bir kez gerekir.</s:String>
     <s:String x:Key="NotNow">Şimdi değil</s:String>

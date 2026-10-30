@@ -305,6 +305,13 @@ Por favor, note que nem todos os parâmetros estarão sempre disponíveis (por e
     <s:String x:Key="SignedIn">Conectado ao YouTube</s:String>
     <s:String x:Key="SignInUnavailable">Não foi possível abrir a janela de login porque o Microsoft Edge WebView2 não está instalado. Use “Importar um arquivo cookies.txt”.</s:String>
     <s:String x:Key="ImportCookiesInstead">Ou importe um arquivo cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">Sua biblioteca</s:String>
+    <s:String x:Key="LibraryHint">Suas músicas curtidas e playlists. Escolha uma para ver os vídeos.</s:String>
+    <s:String x:Key="LibraryLoading">Carregando suas playlists…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Não foi possível carregar suas playlists. Sua sessão pode ter expirado.</s:String>
+    <s:String x:Key="LibraryRefresh">Atualizar</s:String>
+    <s:String x:Key="LibrarySignInTitle">Baixe suas músicas curtidas e playlists</s:String>
+    <s:String x:Key="LibrarySignInHint">Entre com sua conta do YouTube para vê-las aqui.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Falta só um passo</s:String>
     <s:String x:Key="FfmpegMissingMessage">Para juntar vídeo e áudio e converter músicas, o app usa o FFmpeg, um programa gratuito. Ele ainda não está neste computador. Quer baixar agora? São cerca de {0} MB, e só precisa fazer isso uma vez.</s:String>
     <s:String x:Key="NotNow">Agora não</s:String>

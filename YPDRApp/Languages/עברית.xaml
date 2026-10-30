@@ -303,6 +303,13 @@ Please note that not all the parameters are always available (for example, when 
     <s:String x:Key="SignedIn">מחובר ל-YouTube</s:String>
     <s:String x:Key="SignInUnavailable">לא ניתן לפתוח את חלון ההתחברות כי Microsoft Edge WebView2 לא מותקן. השתמשו באפשרות „ייבוא קובץ cookies.txt”.</s:String>
     <s:String x:Key="ImportCookiesInstead">או ייבאו קובץ cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">הספרייה שלך</s:String>
+    <s:String x:Key="LibraryHint">המוזיקה שאהבת והפלייליסטים שלך. בחר אחד כדי לראות את הסרטונים שלו.</s:String>
+    <s:String x:Key="LibraryLoading">טוען את הפלייליסטים שלך…</s:String>
+    <s:String x:Key="LibraryLoadFailed">לא ניתן לטעון את הפלייליסטים שלך. ייתכן שתוקף ההתחברות פג.</s:String>
+    <s:String x:Key="LibraryRefresh">רענון</s:String>
+    <s:String x:Key="LibrarySignInTitle">הורד את המוזיקה שאהבת ואת הפלייליסטים שלך</s:String>
+    <s:String x:Key="LibrarySignInHint">התחבר עם חשבון YouTube שלך כדי לראות אותם כאן.</s:String>
     <s:String x:Key="FfmpegMissingTitle">נשאר רק צעד אחד</s:String>
     <s:String x:Key="FfmpegMissingMessage">כדי לחבר וידאו ושמע ולהמיר מוזיקה, האפליקציה משתמשת ב-FFmpeg, תוכנה חינמית. היא עדיין לא מותקנת במחשב הזה. להוריד אותה עכשיו? בערך {0} MB, ורק פעם אחת.</s:String>
     <s:String x:Key="NotNow">לא עכשיו</s:String>

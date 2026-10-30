@@ -305,6 +305,13 @@ Należy pamiętać, że nie wszystkie parametry są zawsze dostępne (na przykł
     <s:String x:Key="SignedIn">Zalogowano do YouTube</s:String>
     <s:String x:Key="SignInUnavailable">Nie można otworzyć okna logowania, ponieważ Microsoft Edge WebView2 nie jest zainstalowany. Użyj opcji „Importuj plik cookies.txt”.</s:String>
     <s:String x:Key="ImportCookiesInstead">Lub zaimportuj plik cookies.txt</s:String>
+    <s:String x:Key="LibraryTitle">Twoja biblioteka</s:String>
+    <s:String x:Key="LibraryHint">Polubiona muzyka i Twoje playlisty. Wybierz jedną, aby zobaczyć jej filmy.</s:String>
+    <s:String x:Key="LibraryLoading">Wczytywanie playlist…</s:String>
+    <s:String x:Key="LibraryLoadFailed">Nie udało się wczytać playlist. Twoja sesja mogła wygasnąć.</s:String>
+    <s:String x:Key="LibraryRefresh">Odśwież</s:String>
+    <s:String x:Key="LibrarySignInTitle">Pobierz polubioną muzykę i playlisty</s:String>
+    <s:String x:Key="LibrarySignInHint">Zaloguj się na konto YouTube, aby zobaczyć je tutaj.</s:String>
     <s:String x:Key="FfmpegMissingTitle">Jeszcze tylko jeden krok</s:String>
     <s:String x:Key="FfmpegMissingMessage">Do łączenia obrazu z dźwiękiem i konwersji muzyki aplikacja używa FFmpeg, darmowego programu. Nie ma go jeszcze na tym komputerze. Pobrać teraz? Około {0} MB, tylko raz.</s:String>
     <s:String x:Key="NotNow">Nie teraz</s:String>
